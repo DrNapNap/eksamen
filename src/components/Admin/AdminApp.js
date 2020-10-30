@@ -1,14 +1,16 @@
-import React from "react";
+import React,{lazy, Suspense} from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
-
-import AdminRet from "./ret/AdminRet";
-
 import { useGlobal } from "reactn";
-import AdminHome from "./AdminHome";
-import Oret from "./opRet/Oret";
-import Admindelete from "./delete/Admindelete";
+const AdminRet = lazy(() =>  import ("./ret/AdminRet"));
+
+
+const AdminHome  = lazy(() => import ("./AdminHome")  );
+const Oret  = lazy(() => import   ("./opRet/Oret"));
+const Admindelete  = lazy(() => import   ("./delete/Admindelete"));
 
 const AdminApp = () => {
+  const renderLoader = () => <p>Loading</p>;
+
   const [loggetind] = useGlobal("loggetind");
   //hvis loggetind -> forsætte
 
@@ -18,6 +20,7 @@ const AdminApp = () => {
 
   return (
     <>
+    <Suspense fallback={renderLoader()}>
       <Switch>
         <Route exact path="/admin/" component={AdminHome} />
 
@@ -25,7 +28,7 @@ const AdminApp = () => {
 
         <Route path="/admin/AdminRet/:ec" component={AdminRet} />
         <Route path="/admin/Admindelete/:ec" component={Admindelete} />
-      </Switch>
+      </Switch></Suspense>
     </>
   );
 };
