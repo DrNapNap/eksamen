@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 
 import { useGlobal } from "reactn";
 
+
 //rfce
 const Login = () => {
   const [besked, setBesked] = useState();
@@ -21,39 +22,44 @@ const Login = () => {
 
     loginb(e.target).then((res1) => {
       if (res1 !== "error") {
-          //gemmer global state at brugeren
         setglobal(true);
-        console.log("1", res1);
         h.push("/admin");
       } else {
         console.log(res1);
-        setBesked("Noget gik galt");
+        setBesked("(LOGIN) gik galt");
       }
     });
   };
 
+
+
   return (
     <div className="container-fluid">
-      <div className="row m-auto">
-      <h1 className="text-center col-12 mt-3">Login</h1>
-      {besked}
-      <form className=" col-12 m-auto" onSubmit={handleLogin}>
-        <br/>
-        <div className="text-center">
-        <input className="col-3 "
-          type="text"
-          name="brugernavn"
-          required
-          placeholder="brugernavn"
-        /></div>
-        <div className="text-center">
-        <input className="col-3 mt-3" type="password" name="password" required autoComplete="true"  placeholder="password" />
-        </div>
-        <div className="text-center mt-3">
-        <button className="col-3 btn btn-dark" type="submit">Login</button>
-        </div>
-      </form>
-      </div>
+      <section className="row m-auto">
+        <h1 className="text-center col-12 mt-3">Login</h1>
+        
+
+      <h6 className="col-12 text-center">{besked}</h6>
+
+
+
+        <form className=" col-12 m-auto" onSubmit={handleLogin}>
+          <br />
+          <div className="text-center">
+            <input className="col-3 "
+              type="text"
+              name="brugernavn"
+              required
+              placeholder="brugernavn"
+            /></div>
+          <div className="text-center">
+            <input className="col-3 mt-3" type="password" name="password" required autoComplete="true" placeholder="password" />
+          </div>
+          <div className="text-center mt-3">
+            <button className="col-3 btn btn-dark" type="submit">Login</button>
+          </div>
+        </form>
+      </section>
     </div>
   );
 };

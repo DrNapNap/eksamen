@@ -1,12 +1,12 @@
-import React,{lazy, Suspense} from "react";
+import React, { lazy, Suspense } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import { useGlobal } from "reactn";
-const AdminRet = lazy(() =>  import ("./ret/AdminRet"));
+const AdminRet = lazy(() => import("./ret/AdminRet"));
 
 
-const AdminHome  = lazy(() => import ("./AdminHome")  );
-const Oret  = lazy(() => import   ("./opRet/Oret"));
-const Admindelete  = lazy(() => import   ("./delete/Admindelete"));
+const AdminHome = lazy(() => import("./AdminHome"));
+const Oret = lazy(() => import("./opRet/Oret"));
+const Admindelete = lazy(() => import("./delete/Admindelete"));
 
 const AdminApp = () => {
   const renderLoader = () => <p>Loading</p>;
@@ -20,15 +20,15 @@ const AdminApp = () => {
 
   return (
     <>
-    <Suspense fallback={renderLoader()}>
-      <Switch>
-        <Route exact path="/admin/" component={AdminHome} />
+      <Suspense fallback={renderLoader()}>
+        <Switch>
+          <Route exact path="/admin/" component={AdminHome} />
 
-        <Route exact path="/admin/opret" component={Oret} />
+          <Route exact path="/admin/opret" component={Oret} />
 
-        <Route path="/admin/AdminRet/:ec" component={AdminRet} />
-        <Route path="/admin/Admindelete/:ec" component={Admindelete} />
-      </Switch></Suspense>
+          <Route path="/admin/AdminRet/:ec" component={AdminRet} />
+          <Route path="/admin/Admindelete/:ec" component={Admindelete} />
+        </Switch></Suspense>
     </>
   );
 };

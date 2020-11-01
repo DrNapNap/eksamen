@@ -10,8 +10,8 @@ function Admindelete() {
 
 
   const handleSletE = (e) => {
-  axios
-      .delete("http://localhost:5021/event/admin/" + ec , {withCredentials: true})
+    axios
+      .delete("http://localhost:5021/event/admin/" + ec, { withCredentials: true })
       .then((res) => {
         console.log(res.data);
         history.push("/admin");
@@ -22,10 +22,10 @@ function Admindelete() {
   };
 
 
-  
+
   useEffect(() => {
     axios.get("http://localhost:5021/event/" + ec).then((res) => {
-  
+
 
       setg(res.data);
     });
@@ -34,7 +34,7 @@ function Admindelete() {
 
   return (
     <div className="col-5 m-auto">
-     
+
       <div className="card ">
         <div className="card-body">
           <h3 className="card-title">

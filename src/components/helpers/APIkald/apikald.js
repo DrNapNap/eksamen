@@ -6,20 +6,6 @@ const api = {
 }
 
 
-// ----- EVENTS -------------------------
-
-// Get alle events
-export const hentAlleEvents = () => {
-
-    let response = axios.get(api.baseUrl + "event")
-        .then(response => { return response.data })
-        .catch(error => { return "error" })
-
-    return response;
-}
-
-
-
 // Get udvalgt event (send id med)
 export const hentUdvalgtEvent = (eventID) => {
 
@@ -31,17 +17,6 @@ export const hentUdvalgtEvent = (eventID) => {
 }
 
 
-// Get events ud fra dato - response i datoorden med kommende events "øverst"
-export const hentNaesteEvent = (dato) => {
-
-    let response = axios.get(api.baseUrl + "event/soegdato?dato_fra=" + dato) //http://localhost:5021/event/soegdato?dato_fra=2020-10-01
-        .then(response => { return response.data })
-        .catch(error => { return "error" })
-
-    return response;
-    
-}
-
 // Get events - soeg event
 export const soegEvent = (soeg) => {
 
@@ -50,7 +25,7 @@ export const soegEvent = (soeg) => {
         .catch(error => { return "error" })
 
     return response;
-    
+
 }
 
 
@@ -146,7 +121,7 @@ export const hentAlleBestyrelse = () => {
 export const Opret = (nytEvent) => {
     let formdata = new FormData(nytEvent)
 
-    let response = axios.post(api.baseUrl + "event/admin", formdata , {withCredentials:true}) // http://localhost:5021/bestyrelse
+    let response = axios.post(api.baseUrl + "event/admin", formdata, { withCredentials: true }) 
         .then(response => { return response.data })
         .catch(error => { return "error"; })
 
@@ -159,23 +134,24 @@ export const ret = (retEvent, eventID) => {
 
     let formdata = new FormData(retEvent)
 
-    let response = axios.put(api.baseUrl + "event/admin/" + eventID, formdata , {withCredentials:true}) // http://localhost:5021/bestyrelse
+    let response = axios.put(api.baseUrl + "event/admin/" + eventID, formdata, { withCredentials: true })
         .then(response => { return response.data })
         .catch(error => { return "error"; })
-console.log(formdata);
+    console.log(formdata);
     return response;
 }
 
 //login
 
 export const loginb = (brugerlogin) => {
-let formdata = new FormData(brugerlogin);
+    let formdata = new FormData(brugerlogin);
 
-    let response = axios.post(api.baseUrl + "login/login", formdata, {withCredentials:true}) // http://localhost:5021/bestyrelse
+    let response = axios.post(api.baseUrl + "login/login", formdata, { withCredentials: true }) 
         .then(response => { return response.data })
-        .catch(error => { 
+        .catch(error => {
             console.log(error);
-            return "error"; })
+            return "error";
+        })
     return response;
 }
 
@@ -183,7 +159,7 @@ let formdata = new FormData(brugerlogin);
 export const logud = () => {
 
 
-    let response = axios.get(api.baseUrl + "login/logout",  {withCredentials:true}) // http://localhost:5021/bestyrelse
+    let response = axios.get(api.baseUrl + "login/logout", { withCredentials: true }) 
         .then(response => { return response.data })
         .catch(error => { return "error"; })
     return response;
