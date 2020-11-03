@@ -16,11 +16,11 @@ const Footer1 = () => {
     <footer className="container">
       <div className="row justify-content-center">
      
-          <div className="col-3 text-center my-5">
+          <div className="col-12 col-lg-3 text-center my-5">
 <h3 className="text-center text-uppercase  p-1">Location</h3>
 <p>{post.location}</p>
           </div>
-          <div className="col-3 text-center my-5">
+          <div className="col-12 col-lg-3 text-center my-5">
           <h3 className="text-center text-uppercase ">Around the web</h3>
  <div className="row justify-content-center p-1">
 
@@ -30,10 +30,10 @@ const Footer1 = () => {
           <i class="fas fa-basketball-ball whe m-2"></i>
           </div>
           </div>
-          <div className="col-5 text-center my-5">
+          <div className="col-12 col-lg-5 text-center my-5">
               
-          <h3 className="text-center text-uppercase col-10 ">About Boston Gaming</h3>
-          <p className="text-break col-10 text-center">{post.about}</p>
+          <h3 className="text-center text-uppercase col-12 col-lg-10 ">About Boston Gaming</h3>
+          <p className="text-break col-12 col-lg-10 text-center">{post.about}</p>
           </div>
      
       </div>

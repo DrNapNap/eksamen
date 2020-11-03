@@ -16,16 +16,18 @@ const About = () => {
       <section className="row justify-content-center">
         <div className="container">
           <div className="col-12 m-1">
-            <h2 className="text-center text-uppercase whitet py-4">About</h2>
+            <h2 className="text-center text-uppercase whitet py-3">About</h2>
+
+       <p className="whitet text-center   ">
+              _____________  <i class="fas fa-star"></i>  _____________
+            </p>
 
             <div className="row justify-content-center whitet py-5">            
-              <span className="whitet text-center col-12 m-auto py-5">
-              _____________ _____________
-            </span>
-              <section className="col-3 ">
+
+              <section className="col-12 col-lg-3 ">
                 <p className="text-break">{post.content2}</p>
               </section>
-              <section className="col-4">
+              <section className="col-12 col-lg-4">
                 <p className="text-break">{post.content1}</p>
               </section>
             </div>

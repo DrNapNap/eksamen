@@ -25,15 +25,15 @@ const Produktdetaljer = () => {
 
           <div className="row">
             <img
-              className="col-5 img-fluid"
+              className="col-10 col-lg-5 img-fluid"
               src={"http://localhost:5039/images/product/" + post.productimage}
               alt={post.title}
             />
 
-            <p className="col-6 py-3">{post.content}</p>
+            <p className="col-12  col-lg-6 py-3">{post.content}</p>
 
-            <p className="col-8 py-4">Pris 300KR</p>
-            <button className=" col-2 m-auto  btn btn-dark">Køb NU</button>
+            <p className="col-12 col-lg-8 py-4">Pris 300KR</p>
+            <button className=" col-12 col-lg-2 m-auto  btn btn-dark">Køb NU</button>
           </div>
         </div>
       </div>

@@ -12,7 +12,7 @@ const NavLinks = (props) => {
 
 
   return (
-    <nav className="  navbar-expand-lg navbar-light container-fluid  white sticky-top ">
+    <nav className="  navbar-expand-lg  navbar-light container-fluid  white sticky-top ">
 <div className="container ">
       <button
         className="navbar-toggler"
@@ -25,9 +25,9 @@ const NavLinks = (props) => {
       >
         <span className="navbar-toggler-icon"></span>
       </button>
-      <div className="collapse navbar-collapse " id="navbarNavAltMarkup">
-        <img alt="logo" className="col-1 my-3 img-fluid" src={img}/> <h4 className="my-4">BOSTON GAMING</h4>
-        <div className="navbar-nav col-12 col-lg-6 my-2">
+      <div className="collapse navbar-collapse  " id="navbarNavAltMarkup">
+ <img alt="logo" className="col-3 my-3 img-fluid col-lg-1" src={img}/>      <NavLink className="nav-link" to="/"> <h4 className="my-4">BOSTON GAMING</h4></NavLink> 
+        <div className="navbar-nav col-12 col-lg-6 my-2 justify-content-end">
           <NavLink className="nav-link active" to="/">
             PRODUCTS
           </NavLink>
@@ -41,7 +41,10 @@ const NavLinks = (props) => {
             CONTACT
           </NavLink>
         </div>
-
+<form className="">
+<input placeholder="Søg har"  type="search"/>
+<button type="submit">Søg</button>
+</form>
         <Navapi className="" />
       </div>
       </div>

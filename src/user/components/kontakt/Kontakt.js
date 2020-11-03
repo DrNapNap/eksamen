@@ -27,7 +27,11 @@ const Kontakt = () => {
 
   return (
     <div className="container">
+    <h2 className="text-center text-uppercase whitet py-3 ">Contact us</h2>
 
+<p className="whitet text-center   ">
+       _____________  <i class="fas fa-star"></i>  _____________
+     </p>
        
       <div className="row  m-4">
         <div className="col-8 m-auto">

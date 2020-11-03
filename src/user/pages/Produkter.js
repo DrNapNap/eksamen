@@ -15,7 +15,7 @@ const Produkter = () => {
   let liste = "";
   if (post && post.length) {
     liste = post.map((r) => (
-      <div key={r._id}  className=" col-4"><Link className="" to={"/Produktdetaljer/" + r._id}>
+      <div key={r._id}  className=" col-12 col-lg-4"><Link className="" to={"/Produktdetaljer/" + r._id}>
         <div className="g m-3">
           <p className="col-12 whitet">{r.category.title}</p>
 
@@ -37,8 +37,12 @@ const Produkter = () => {
     <section className="container">
       <div className="row">
         <div className="col-12">
-          <h2 className="whitet text-center col-12 my-5">PRODUCTS</h2>
+          <h2 className="whitet text-center col-12 my-4">PRODUCTS</h2>
 
+
+<p className="whitet text-center   ">
+       _____________  <i class="fas fa-star"></i>  _____________
+     </p>
           <div className="row col-12">{liste}</div>
         </div>
       </div>

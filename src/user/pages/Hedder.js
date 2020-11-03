@@ -27,8 +27,10 @@ if (post && post.length) {
       <img src={"http://localhost:5039/images/slider/" + r.sliderimage} className="d-block w-100  h-s__img " alt={r.alttext}/>
       <div className="carousel-caption">
         <div className="black col-6 m-auto ">
-        <h2 className="py-4">BOSTON GAMING</h2>
-        <span>______   ______</span>
+        <h2 className="text-center text-uppercase whitet py-3">BOSTON GAMING</h2>
+<p className="whitet text-center   ">
+       _____________  <i class="fas fa-star"></i>  _____________
+     </p>
         
         <p className="py-5">{r.alttext}</p>
       </div>
