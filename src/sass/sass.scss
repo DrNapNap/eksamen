@@ -10,6 +10,67 @@
 @import "node_modules/bootstrap/scss/code";
 @import "node_modules/bootstrap/scss/grid";
 
+$wi-color: #ffffff;
+$black : rgba(0, 0, 0, 0.7);
+
+$g : #414141;
+
+$b: #050505;
+
 body {
-    background-color: aqua;
+    background-color: black;
+}
+
+
+.white {
+    background-color: $wi-color;
+}
+
+.whitet {
+    color: $wi-color;
+}
+
+.g{
+    background-color: $g;
+    border-radius: 10px;
+    margin:  5px;
+}
+
+.img{
+    border-radius: 5px;
+}
+
+
+.total{
+    border-radius: 10px;
+}
+
+
+.carousel-caption {
+    position: absolute;
+    right: 15%;
+    bottom: 20px;
+    left: 15%;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 214px;
+    color: #fff;
+    text-align: center;
+
+}
+
+.h-s__img{
+    max-height: 650px;
+}
+
+.black{
+    background-color: $black;
+}
+
+a:hover{
+    color: transparent;
+}
+
+.textb{
+    color: $b;
 }

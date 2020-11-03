@@ -3,11 +3,11 @@ import React, { useState, useEffect } from "react";
 import {
   ret,
   hentAlleRegioner,
-  hentUdvalgtEvent,
+  hentAlleproduct,
 } from "../../helpers/APIkald/apikald";
 import dayjs from "dayjs";
 
-
+import { BarLoader } from 'react-spinners'
 
 
 
@@ -18,7 +18,7 @@ import { useHistory } from "react-router-dom";
 const AdminRet = (props) => {
   const ID = props.match.params.ec;
 
-  
+
 
   const [regioner, setRegioner] = useState();
   const history = useHistory();
@@ -30,7 +30,7 @@ const AdminRet = (props) => {
       if (res !== "error") setRegioner(res);
     });
 
-    hentUdvalgtEvent(ID).then((res) => {
+    hentAlleproduct(ID).then((res) => {
       if (res !== "err") setevent(res);
     });
   }, [ID]);
@@ -145,11 +145,11 @@ const AdminRet = (props) => {
               singleImage={true}
               withPreview={true}
               required={true}
-            
+
             />
           </div>
 
-          <img src={"http://localhost:5021/images/events/"+ event.billede } alt="" />
+          <img src={"http://localhost:5021/images/events/" + event.billede} alt="" />
 
           <br />
           <br />
@@ -157,8 +157,8 @@ const AdminRet = (props) => {
           <button type="submit">Ret Event</button>
         </form>
       ) : (
-        <h2>lo</h2>
-      )}
+          <BarLoader className=" text-center" width="440" color='orange' loading />
+        )}
     </>
   );
 };

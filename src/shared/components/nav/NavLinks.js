@@ -1,23 +1,19 @@
-import React, { useRef } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import Navapi from "./Navapi";
+import img from "../img/logo.png"
+
 
 import "./NavLinks.css";
 
-import { useHistory } from "react-router-dom";
+
 
 const NavLinks = (props) => {
-  const soe = useRef(null);
 
-  const history = useHistory();
-
-  // eslint-disable-next-line no-unused-vars
-  function handleSoeg() {
-    history.push("/s/" + soe.current.value);
-  }
 
   return (
-    <nav className=" col-12 p-0 m-0 navbar navbar-expand-lg navbar-expand-sm navbar-light row col__nav container-fluid ">
+    <nav className="  navbar-expand-lg navbar-light container-fluid  white sticky-top ">
+<div className="container ">
       <button
         className="navbar-toggler"
         type="button"
@@ -30,22 +26,24 @@ const NavLinks = (props) => {
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className="collapse navbar-collapse " id="navbarNavAltMarkup">
-        <div className="navbar-nav col-12 col-lg-6 ">
+        <img alt="logo" className="col-1 my-3 img-fluid" src={img}/> <h4 className="my-4">BOSTON GAMING</h4>
+        <div className="navbar-nav col-12 col-lg-6 my-2">
           <NavLink className="nav-link active" to="/">
-            Home
+            PRODUCTS
           </NavLink>
           <NavLink className="nav-link active" to="/">
-            SPONSORE
+            DESIGN YOUR OWN
           </NavLink>
           <NavLink className="nav-link active" to="/">
-            OM RUNIT
+           ABOUT
           </NavLink>
           <NavLink className="nav-link active" to="/">
-            KONTAKT
+            CONTACT
           </NavLink>
         </div>
 
         <Navapi className="" />
+      </div>
       </div>
     </nav>
   );

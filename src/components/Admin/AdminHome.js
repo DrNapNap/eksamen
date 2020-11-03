@@ -9,7 +9,7 @@ const Admin = (props) => {
   const [post, setPost] = useState({});
 
   useEffect(() => {
-    axios.get("http://localhost:5021/event").then((res) => {
+    axios.get("http://localhost:5039/slider").then((res) => {
       const p1 = res.data.slice(0, 80);
 
       setPost(p1);
