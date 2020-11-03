@@ -17,8 +17,15 @@ $g : #414141;
 
 $b: #050505;
 
+$f: 10px;
+
+
 body {
     background-color: black;
+}
+
+.footer{
+    font-size: $f;
 }
 
 
@@ -33,7 +40,13 @@ body {
 .g{
     background-color: $g;
     border-radius: 10px;
-    margin:  5px;
+
+}
+
+.about{
+    background-color: $g;
+
+
 }
 
 .img{
@@ -73,4 +86,27 @@ a:hover{
 
 .textb{
     color: $b;
+}
+
+
+.minh{
+    max-height: 121px;
+}
+
+
+.ew{
+    border: transparent;
+    border-bottom: 1px #838586 solid;
+    background-color: transparent;
+    color: $wi-color;
+    cursor: pointer;
+
+
+}
+
+.whe{
+    border-radius: 100%;
+    border: 1px $wi-color solid ;
+    font-size: 15px;
+    padding: 5px;
 }

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 
 import {
   ret,
-  hentAlleRegioner,
   hentAlleproduct,
 } from "../../helpers/APIkald/apikald";
 import dayjs from "dayjs";
@@ -26,7 +25,7 @@ const AdminRet = (props) => {
   const [event, setevent] = useState();
 
   useEffect(() => {
-    hentAlleRegioner().then((res) => {
+    hentAlleproduct().then((res) => {
       if (res !== "error") setRegioner(res);
     });
 

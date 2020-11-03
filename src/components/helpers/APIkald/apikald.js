@@ -44,6 +44,15 @@ export const soegEvent = (soeg) => {
 
 }
 
+export const hentabout = () => {
+
+    let response = axios.get(api.baseUrl + "about")
+        .then(response => { return response.data })
+        .catch(error => { return "error" })
+
+    return response;
+}
+
 
 export const hentAllegear = () => {
 
@@ -54,24 +63,16 @@ export const hentAllegear = () => {
     return response;
 }
 
-export const hentAlleRegioner = () => {
 
-    let response = axios.get(api.baseUrl + "region") 
+export const hentfooter = () => {
+
+    let response = axios.get(api.baseUrl + "footer")
         .then(response => { return response.data })
         .catch(error => { return "error" })
 
     return response;
 }
 
-
-export const hentAlleSponsorer = () => {
-
-    let response = axios.get(api.baseUrl + "sponsor") 
-        .then(response => { return response.data })
-        .catch(error => { return "error" })
-
-    return response;
-}
 
 
 
@@ -79,27 +80,12 @@ export const sendKontaktbesked = (besked) => {
 
     let formdata = new FormData(besked);
 
-    let response = axios.post(api.baseUrl + "kontakt", formdata)
+    let response = axios.post(api.baseUrl + "contact", formdata) 
         .then(response => { return response.data })
         .catch(error => { return "error" })
 
     return response;
 }
-
-
-export const tilmeldNyhedsbrev = (email) => { 
-
-    let formdata = new FormData(email);
-
-
-    let response = axios.post(api.baseUrl + "nyhedsbrevtilmelding", formdata) 
-        .then(response => { return response.data })
-        .catch(error => { return "error" })
-
-    return response;
-}
-
-
 
 
 //opRet

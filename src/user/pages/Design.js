@@ -7,6 +7,7 @@ const Design = () => {
 return(
     <>
         <Egencomputer/>
+        
     </>
 )
 

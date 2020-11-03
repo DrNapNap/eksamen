@@ -1,13 +1,14 @@
 import React, { lazy, Suspense } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Design from "./user/pages/Design";
+
 const Produktdetaljer = lazy(() => import( "./user/pages/Produktdetaljer"));
 
 const NavLinks = lazy(() => import("./shared/components/nav/NavLinks"));
-const Produkter = lazy(() => import("./user/pages/Produkter"));
-const Footer = lazy(() => import("./shared/components/Footer"));
+const Pages = lazy(() => import("./user/pages/allepages/Pages"));
+const Footer2 = lazy(() => import("./shared/components/Footer2"));
 const NotFound = lazy(() => import("./components/NotFound"));
 const Hedder = lazy(() => import("./user/pages/Hedder"));
+const Footer1 = lazy(() => import("./shared/components/Footer1"));
 
 function App() {
   const renderLoader = () => <p>Loading</p>;
@@ -20,14 +21,15 @@ function App() {
           <Hedder />
         
           <Switch>
-            <Route exact path="/" component={Produkter} />
+            <Route exact path="/" component={Pages} />
             <Route  path="/Produktdetaljer/:idd" component={Produktdetaljer} />
             <Route component={NotFound} />
               
-          </Switch><Design/>
+          </Switch>
+          
         </BrowserRouter>
-
-        <Footer />
+<Footer1/>
+        <Footer2 />
       </main>
     </Suspense>
   );

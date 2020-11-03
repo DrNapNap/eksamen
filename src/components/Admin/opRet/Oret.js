@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { Opret, hentAlleRegioner } from "../../helpers/APIkald/apikald";
+import { Opret } from "../../helpers/APIkald/apikald";
 import ImageUploader from "react-images-upload";
 
 import { useHistory } from "react-router-dom";
@@ -27,7 +27,7 @@ const Oret = () => {
   const [b, setb] = useState();
 
   useEffect(() => {
-    hentAlleRegioner().then((res) => {
+    Opret().then((res) => {
       if (res !== "error") setRegioner(res);
     });
   }, []);

@@ -8249,6 +8249,9 @@ pre {
 body {
   background-color: black; }
 
+.footer {
+  font-size: 10px; }
+
 .white {
   background-color: #ffffff; }
 
@@ -8257,8 +8260,10 @@ body {
 
 .g {
   background-color: #414141;
-  border-radius: 10px;
-  margin: 5px; }
+  border-radius: 10px; }
+
+.about {
+  background-color: #414141; }
 
 .img {
   border-radius: 5px; }
@@ -8288,3 +8293,19 @@ a:hover {
 
 .textb {
   color: #050505; }
+
+.minh {
+  max-height: 121px; }
+
+.ew {
+  border: transparent;
+  border-bottom: 1px #838586 solid;
+  background-color: transparent;
+  color: #ffffff;
+  cursor: pointer; }
+
+.whe {
+  border-radius: 100%;
+  border: 1px #ffffff solid;
+  font-size: 15px;
+  padding: 5px; }
