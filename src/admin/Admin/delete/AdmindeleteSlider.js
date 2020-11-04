@@ -2,16 +2,18 @@ import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 
-function Admindelete() {
+import { hentUdslider } from "../../helpers/APIkald/apikald";
 
+function AdminRetSlider() {
   const { ec } = useParams();
   const history = useHistory();
-  const [gd, setg] = useState({});
-
+  const [gd, setProduct] = useState("");
 
   const handleSletE = (e) => {
     axios
-      .delete("" + ec, { withCredentials: true })
+      .delete("http://localhost:5039/slider/admin/" + ec, {
+        withCredentials: true,
+      })
       .then((res) => {
         console.log(res.data);
         history.push("/admin");
@@ -21,27 +23,33 @@ function Admindelete() {
       });
   };
 
-
-
   useEffect(() => {
-    axios.get("" + ec).then((res) => {
-
-
-      setg(res.data);
+    hentUdslider(ec).then((res) => {
+      if (res !== "err") setProduct(res);
     });
   }, [ec]);
 
+  console.log(ec);
+
+  
 
   return (
     <div className="col-5 m-auto">
-
       <div className="card ">
         <div className="card-body">
           <h3 className="card-title">
-            Er du sikker på at du vil slette denne Event:
+            Er du sikker på at du vil slette denne slider:
           </h3>
-          <h4>{gd.titel}</h4>
-          <p>{gd.beskrivelse}</p>
+          <h6>Text du slet : {gd.alttext}</h6>
+
+          <div className=" col-12 col-lg-12 m-auto p-2">
+            <img
+              className="img-fluid"
+              src={"http://localhost:5039/images/slider/" + gd.sliderimage}
+              alt={gd.productimage}
+            ></img>
+          </div>
+
           <button
             className="btn btn-success mr-3"
             onClick={() => {
@@ -58,4 +66,4 @@ function Admindelete() {
     </div>
   );
 }
-export default Admindelete;
+export default AdminRetSlider;

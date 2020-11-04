@@ -15,6 +15,16 @@ export const hentAlleslider = () => {
     return response;
 }
 
+export const hentUdslider = (id) => {
+
+    let response = axios.get(api.baseUrl + "slider/" + id) 
+        .then(response => { return response.data })
+        .catch(error => { return "error" })
+
+    return response;
+}
+
+
 export const hentAlleproduct = () => {
 
     let response = axios.get(api.baseUrl + "product")
@@ -73,6 +83,9 @@ export const hentabout = () => {
 }
 
 
+
+
+
 export const hentAllegear = () => {
 
     let response = axios.get(api.baseUrl + "gear")
@@ -108,10 +121,21 @@ export const sendKontaktbesked = (besked) => {
 
 
 //opRet
-export const Opret = (nytEvent) => {
-    let formdata = new FormData(nytEvent)
+export const Opret = (nyeproduct) => {
+    let formdata = new FormData(nyeproduct)
 
     let response = axios.post(api.baseUrl + "product/admin", formdata, { withCredentials: true }) 
+        .then(response => { return response.data })
+        .catch(error => { return "error"; })
+
+    return response;
+}
+
+
+export const OpretSlder = (nyeproduct) => {
+    let formdata = new FormData(nyeproduct)
+
+    let response = axios.post(api.baseUrl + "slider/admin", formdata, { withCredentials: true }) 
         .then(response => { return response.data })
         .catch(error => { return "error"; })
 
@@ -124,7 +148,7 @@ export const ret = (retEvent, eventID) => {
 
     let formdata = new FormData(retEvent)
 
-    let response = axios.put(api.baseUrl + "event/admin/" + eventID, formdata, { withCredentials: true })
+    let response = axios.put(api.baseUrl + "product/admin/" + eventID, formdata, { withCredentials: true })
         .then(response => { return response.data })
         .catch(error => { return "error"; })
     console.log(formdata);
