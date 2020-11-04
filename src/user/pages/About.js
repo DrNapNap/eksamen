@@ -1,6 +1,7 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import { useState, useEffect } from "reactn";
-import { hentabout } from "../../components/helpers/APIkald/apikald";
+import { hentabout } from "../../admin/helpers/APIkald/apikald";
 
 const About = () => {
   const [post, setPost] = useState("");
@@ -13,6 +14,7 @@ const About = () => {
 
   return (
     <div className="container-fluid about ">
+    <a className="anchor" id="aboutus"></a>
       <section className="row justify-content-center">
         <div className="container">
           <div className="col-12 m-1">

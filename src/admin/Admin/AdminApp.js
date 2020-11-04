@@ -14,9 +14,9 @@ const AdminApp = () => {
   const [loggetind] = useGlobal("loggetind");
   //hvis loggetind -> forsætte
 
-  if (!loggetind) {
-    return <Redirect to={{ pathname: "/login" }} />;
-  }
+  // if (!loggetind) {
+  //   return <Redirect to={{ pathname: "/login" }} />;
+  // }
 
   return (
     <>

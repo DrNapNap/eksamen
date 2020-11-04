@@ -6,6 +6,7 @@ const Design = () => {
 
 return(
     <>
+    <a className="anchor" id="design"></a>
         <Egencomputer/>
         
     </>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { sendKontaktbesked } from "../../../components/helpers/APIkald/apikald";
+import { sendKontaktbesked } from "../../../admin/helpers/APIkald/apikald";
 
 
 const Kontakt = () => {
@@ -23,10 +23,9 @@ const Kontakt = () => {
   };
   
 
-  console.log(state);
-
   return (
-    <div className="container">
+    <div className="container my-5">
+      
     <h2 className="text-center text-uppercase whitet py-3 ">Contact us</h2>
 
 <p className="whitet text-center   ">
@@ -34,7 +33,7 @@ const Kontakt = () => {
      </p>
        
       <div className="row  m-4">
-        <div className="col-8 m-auto">
+        <div className="col-12 col-lg-8 m-auto">
           <form className="col-12 whitet" onSubmit={handleBesked}>
             <label className="col-12">
               Navn

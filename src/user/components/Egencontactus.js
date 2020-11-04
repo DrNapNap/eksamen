@@ -1,4 +1,4 @@
-import React, { useState, useEffect}  from "react";
+import React  from "react";
 
 const Egencomputer = () => {
   return (
@@ -8,9 +8,9 @@ const Egencomputer = () => {
         <p className="col-11  my-1 ">Total</p>
         <div className="col-1 my-1">$0</div>
       </div> 
-<form>
+<form >
       <div className="form-group row m-auto">
-            <h4 className="col-12 m-2  p-0 whitet">Contact us!</h4>
+            <h4 className="col-12 m-2  whitet">Contact us!</h4>
 
 
         

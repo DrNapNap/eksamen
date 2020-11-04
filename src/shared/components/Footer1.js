@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { hentfooter } from "../../components/helpers/APIkald/apikald";
+import { hentfooter } from "../../admin/helpers/APIkald/apikald";
 
 const Footer1 = () => {
 

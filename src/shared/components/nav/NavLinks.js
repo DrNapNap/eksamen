@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+
 import Navapi from "./Navapi";
 import img from "../img/logo.png"
 
@@ -26,20 +26,20 @@ const NavLinks = (props) => {
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className="collapse navbar-collapse  " id="navbarNavAltMarkup">
- <img alt="logo" className="col-3 my-3 img-fluid col-lg-1" src={img}/>      <NavLink className="nav-link" to="/"> <h4 className="my-4">BOSTON GAMING</h4></NavLink> 
+ <img alt="logo" className="col-3 my-3 img-fluid col-lg-1" src={img}/>      <a className="nav-link" href="/"> <h4 className="my-4">BOSTON GAMING</h4></a> 
         <div className="navbar-nav col-12 col-lg-6 my-2 justify-content-end">
-          <NavLink className="nav-link active" to="/">
+          <a className="nav-link active" href="#products">
             PRODUCTS
-          </NavLink>
-          <NavLink className="nav-link active" to="/">
+          </a>
+          <a className="nav-link active" href="#design">
             DESIGN YOUR OWN
-          </NavLink>
-          <NavLink className="nav-link active" to="/">
+          </a>
+          <a className="nav-link active" href="#aboutus">
            ABOUT
-          </NavLink>
-          <NavLink className="nav-link active" to="/">
+          </a>
+          <a className="nav-link active" href="#contact">
             CONTACT
-          </NavLink>
+          </a>
         </div>
 <form className="">
 <input placeholder="Søg har"  type="search"/>

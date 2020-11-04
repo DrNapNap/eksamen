@@ -9,7 +9,7 @@ const Admin = (props) => {
   const [post, setPost] = useState({});
 
   useEffect(() => {
-    axios.get("http://localhost:5039/slider").then((res) => {
+    axios.get("http://localhost:5039/product").then((res) => {
       const p1 = res.data.slice(0, 80);
 
       setPost(p1);
@@ -21,28 +21,30 @@ const Admin = (props) => {
   if (post.length > 0) {
     postliste = post.map((p) => {
       return (
-        <div className="" key={p._id}>
+        <div className="whitet " key={p._id}>
           <p className="col-12 col-lg-12">ID : {p._id} </p>
-          <div className="m-3">
+          <div className="m-3 col-12">
             {parse(
-              p.beskrivelse.length > 150
-                ? p.beskrivelse.substr(0, 150) + "...."
-                : p.beskrivelse
+              p.title.length > 150
+                ? p.title.substr(0, 150) + "...."
+                : p.title
             )}
           </div>
-          <p className="col-12 col-lg-12  my-3 ">
-            beskrivelse :{" "}
-            {p.titel.length > 150 ? p.titel.substr(0, 150) + "...." : p.titel}
-          </p>
+          <div className="col-12 col-lg-12  my-3 ">
+          Content :{" "}
+          {parse(
+              p.content.length > 150
+                ? p.content.substr(0, 150) + "...."
+                : p.content
+            )}       
+</div>
+          <p className="col-12 my-3 ">Category : {p.category.title}</p>
 
-          <p className="col-12 my-3 ">dato : {p.dato}</p>
-          <p className="col-12  my-3 ">distance : {p.distance / 1000} KM</p>
-          <p className="col-12  my-3 ">titel : {p.pris}</p>
           <div className=" col-12 col-lg-5">
             <img
               className="img-fluid"
-              src={"http://localhost:5021/images/events/" + p.billede}
-              alt={p.billede}
+              src={"http://localhost:5039/images/product/" + p.productimage}
+              alt={p.productimage}
             ></img>
           </div>
           <br />
@@ -72,12 +74,12 @@ const Admin = (props) => {
     <section className="container-fluid ">
       <div className=" row">
         <div className="col-12 col-lg-10 p-0 m-0">
-          <h3 className="p-4 col-12 m-auto col-lg-12">Admin</h3>
+          <h3 className="p-4 col-12 m-auto col-lg-12 whitet">Admin</h3>
           <Link
             to={"/admin/opret"}
             className="col-12 col-lg-2 btn btn-success my-3"
           >
-            Opret ny events
+            Opret ny product
           </Link>
 
           {postliste}

@@ -24,6 +24,15 @@ export const hentAlleproduct = () => {
     return response;
 }
 
+export const hentAllecategory= () => {
+
+    let response = axios.get(api.baseUrl + "category")
+        .then(response => { return response.data })
+        .catch(error => { return "error" })
+
+    return response;
+}
+
 
 export const hentUdvalgt = (id) => {
 
@@ -92,7 +101,7 @@ export const sendKontaktbesked = (besked) => {
 export const Opret = (nytEvent) => {
     let formdata = new FormData(nytEvent)
 
-    let response = axios.post(api.baseUrl + "event/admin", formdata, { withCredentials: true }) 
+    let response = axios.post(api.baseUrl + "product/admin", formdata, { withCredentials: true }) 
         .then(response => { return response.data })
         .catch(error => { return "error"; })
 

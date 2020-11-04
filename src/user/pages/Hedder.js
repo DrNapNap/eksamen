@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { hentAlleslider } from "../../components/helpers/APIkald/apikald";
+import { hentAlleslider } from "../../admin/helpers/APIkald/apikald";
 
 
 

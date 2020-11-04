@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { hentAlleproduct } from "../../components/helpers/APIkald/apikald";
+import { hentAlleproduct } from "../../admin/helpers/APIkald/apikald";
 
 const Produkter = () => {
   const [post, setPost] = useState("");
@@ -15,19 +15,19 @@ const Produkter = () => {
   let liste = "";
   if (post && post.length) {
     liste = post.map((r) => (
-      <div key={r._id}  className=" col-12 col-lg-4"><Link className="" to={"/Produktdetaljer/" + r._id}>
-        <div className="g m-3">
-          <p className="col-12 whitet">{r.category.title}</p>
+      <div key={r._id} className=" col-12 col-lg-4">
+        <Link className="" to={"/Produktdetaljer/" + r._id}>
+          <div className="g m-3">
+            <p className="col-12 whitet">{r.category.title}</p>
 
-          <p className="whitet text-center pt-4">{r.title}</p>
+            <p className="whitet text-center pt-4">{r.title}</p>
 
-          <img
-            src={"http://localhost:5039/images/product/" + r.productimage}
-            className="img col-12 py-3 img"
-            alt={r.title}
-          />
-          
-        </div>
+            <img
+              src={"http://localhost:5039/images/product/" + r.productimage}
+              className="img col-12 py-3 img"
+              alt={r.title}
+            />
+          </div>
         </Link>
       </div>
     ));
@@ -35,14 +35,14 @@ const Produkter = () => {
 
   return (
     <section className="container">
+      <a className="anchor" id="products"></a>
       <div className="row">
         <div className="col-12">
           <h2 className="whitet text-center col-12 my-4">PRODUCTS</h2>
 
-
-<p className="whitet text-center   ">
-       _____________  <i class="fas fa-star"></i>  _____________
-     </p>
+          <p className="whitet text-center   ">
+            _____________ <i class="fas fa-star"></i> _____________
+          </p>
           <div className="row col-12">{liste}</div>
         </div>
       </div>

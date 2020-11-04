@@ -6,6 +6,7 @@ const Contactus = () => {
 
   return (
     <>
+    <a className="anchor" id="contact"></a>
 <Kontakt/>
     </>
   );
