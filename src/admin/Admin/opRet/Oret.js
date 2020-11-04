@@ -50,7 +50,7 @@ const Oret = () => {
   return (
     <div className="container whitet">
      
-      <div className="row input-group flex-nowrap">
+      <div className="row ">
     <form className="col-10"  onSubmit={handleSubmit}>
 
 
@@ -62,13 +62,14 @@ const Oret = () => {
         defaultValue={b}
         className="col-8"
       ></textarea>
-      <label className="col-12">
+      <div>
+      <label className="col-12 m-3">
         Titel
-        <input className="col-12 form-control" name="title" id="inpTitel" type="text" placeholder="Titel" />
+        <input className="col-8 form-control " name="title" id="inpTitel" type="text" placeholder="Titel" />
       </label>
-   <label className="col-11 m-3 textb">
+   <label className="col-10 m-3 textb">
      Skive det content
-      <CKEditor className="col-6"
+      <CKEditor className="col-9"
         config={editorConfiguration}
         editor={ClassicEditor}
         data="<p>CKEditor 5!</p>"
@@ -82,7 +83,7 @@ const Oret = () => {
           setb(data);
         }}
       /></label>
-
+</div>
 <div className="col-10 m-3">
       <select className="col-9"  name="category" defaultValue="DEFAULT" id="regionselect">
         <option value="DEFAULT" disabled>
@@ -108,8 +109,8 @@ const Oret = () => {
       </div>
       <br />
       <br />
-      <button className="btn btn-danger"  type="button">Fortryd</button>
-      <button className="btn btn-success" type="submit">Gem Product</button>
+      <button className="btn btn-danger m-3"  type="button">Fortryd</button>
+      <button className="btn btn-success m-3" type="submit">Gem Product</button>
     </form></div>
     </div>
   );

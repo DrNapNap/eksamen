@@ -34,6 +34,16 @@ export const hentAllecategory= () => {
 }
 
 
+export const hentUdvalgtProduct = (id) => {
+
+    let response = axios.get(api.baseUrl + "product/" + id) 
+        .then(response => { return response.data })
+        .catch(error => { return "error" })
+
+    return response;
+}
+
+
 export const hentUdvalgt = (id) => {
 
     let response = axios.get(api.baseUrl + "product/category/" + id) 

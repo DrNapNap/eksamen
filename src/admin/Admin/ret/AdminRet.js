@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 
 import {
   ret,
-  hentAlleproduct,
+  hentAllecategory,
+  hentUdvalgtProduct,
 } from "../../helpers/APIkald/apikald";
-import dayjs from "dayjs";
+
 
 import { BarLoader } from 'react-spinners'
 
@@ -19,18 +20,18 @@ const AdminRet = (props) => {
 
 
 
-  const [regioner, setRegioner] = useState();
+  const [category, setCategory] = useState();
   const history = useHistory();
 
-  const [event, setevent] = useState();
+  const [product, setProduct] = useState();
 
   useEffect(() => {
-    hentAlleproduct().then((res) => {
-      if (res !== "error") setRegioner(res);
+    hentAllecategory().then((res) => {
+      if (res !== "error") setCategory(res);
     });
 
-    hentAlleproduct(ID).then((res) => {
-      if (res !== "err") setevent(res);
+    hentUdvalgtProduct(ID).then((res) => {
+      if (res !== "err") setProduct(res);
     });
   }, [ID]);
 
@@ -42,98 +43,47 @@ const AdminRet = (props) => {
     });
   };
 
-  let regionliste = "";
-  if (regioner && regioner.length) {
-    regionliste = regioner.map((r) => (
+  let liste = "";
+  if (category && category.length) {
+    liste = category.map((r) => (
       <option value={r._id} key={r._id}>
-        {r.regionnavn}
+        {r.title}
       </option>
     ));
   }
 
+
   return (
-    <>
-      {event ? (
-        <form onSubmit={handleSubmit}>
-          <label>
+    <div className="container-fluid g">
+    <div className="container whitet ">
+      {product ? (
+        <form className="row"  onSubmit={handleSubmit}>
+          <div className="col-12">
+          <label className="col-12">
             Titel
-            <input
-              name="titel"
+            <input className="col-12"
+              name="title"
               id="inpTitel"
               type="text"
-              placeholder="Titel"
-              defaultValue={event.titel}
+              placeholder="Title"
+              defaultValue={product.title}
             />
           </label>
-          <br />
-          <br />
-          <label>
-            Dato og tid
-            <input
-              name="dato"
-              id="inpDato"
-              type="text"
-              placeholder="Vælg dato"
-              defaultValue={
-                dayjs(event.dato).format("YYYY-MM-DDTHH:mm")
-              }
-            />
-          </label>
-          <br />
-          <br />
-          <label>
+
+          <label className="col-12">
+          Content
             <textarea
-              name="beskrivelse"
+              name="content"
               id="txtBeskrivelse"
-              placeholder="Beskrivelse"
-              defaultValue={event.beskrivelse}
+              placeholder="content"
+              className="col-12"
+              defaultValue={product.content}
             ></textarea>
           </label>
-          <br />
-          <br />
-          <label>
-            Distance
-            <input
-              name="distance"
-              type="number"
-              min="1"
-              max="100000"
-              placeholder="Distance i meter"
-              defaultValue={event.distance}
-            />
-          </label>
-          <br />
-          <br />
-          <label>
-            Pris i kr.
-            <input
-              name="pris"
-              type="number"
-              min="0"
-              max="10000"
-              placeholder="Pris i kr"
-              defaultValue={event.pris}
-            />
-          </label>
-          <br />
-          <br />
-          <label>
-            Antal pladser
-            <input
-              name="antalpladser"
-              type="number"
-              min="1"
-              max="10000"
-              placeholder="Antal pladser"
-              defaultValue={event.pris}
-            />
-          </label>
-          <br />
-          <br />
-          <select defaultValue={event.region._id} name="region">{regionliste}</select>
-          <br />
-          <br />
+<div className="col-12">
+         <select className="col-4" defaultValue={product._id} name="category">{liste}</select> 
 
+</div>
           <div>
             <ImageUploader
               name="billede"
@@ -147,18 +97,18 @@ const AdminRet = (props) => {
 
             />
           </div>
-
-          <img src={"http://localhost:5021/images/events/" + event.billede} alt="" />
-
+<div className="col-6 m-auto">
+          <img className="img-fluid col-12 " src={"http://localhost:5039/images/product/" + product.productimage} alt="" />
+</div>
           <br />
-          <br />
-          <button type="button">Fortryd</button>
-          <button type="submit">Ret Event</button>
+
+          <button type="button" className="col-1 m-3  btn btn-success">Fortryd</button>
+          <button type="submit" className="col-2 m-3 btn btn-danger"  >Ret Product</button></div>
         </form>
       ) : (
           <BarLoader className=" text-center" width="440" color='orange' loading />
         )}
-    </>
+    </div></div>
   );
 };
 
