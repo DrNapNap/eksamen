@@ -3,7 +3,7 @@ import { sendKontaktbesked } from "../../../admin/helpers/APIkald/apikald";
 
 
 const Kontakt = () => {
-  const [state, setstate] = useState();
+  const [ setstate] = useState();
 
 
   const handleBesked = (e) => {

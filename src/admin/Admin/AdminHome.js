@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { useParams, useHistory, Link } from "react-router-dom";
+import React from "react";
+import {  Link } from "react-router-dom";
 
 function AdminHome() {
-  const { ec } = useParams();
-  const history = useHistory();
-  const [gd, setProduct] = useState("");
+
 
   return (
     <section className="container">
@@ -24,6 +22,15 @@ function AdminHome() {
           <div className="col-12 m-2 text-uppercase">
           <Link className="btn-success btn col-3 m-auto" to="/admin/AboutAdmin/">
              Ret, About
+          </Link></div>
+          <div className="col-12 m-2 text-uppercase">
+          <Link className="btn-success btn col-3 m-auto" to="/admin/AdminFooter">
+             Ret, Footer
+          </Link></div>
+
+          <div className="col-12 m-2 text-uppercase">
+          <Link className="btn-success btn col-3 m-auto" to="/admin/AdminContact/">
+          Delete, Contact
           </Link></div>
         </div>
       </div>

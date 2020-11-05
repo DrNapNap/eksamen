@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
-import axios from "axios";
+import {  hentfooter } from "../../helpers/APIkald/apikald";
 
 
-const AboutAdmin = (props) => {
+const FooterAdmin = (props) => {
   const [post, setPost] = useState({});
 
-  useEffect(() => {
-    axios.get("http://localhost:5039/about/").then((res) => {
 
-      setPost(res.data);
+  useEffect(() => {
+    hentfooter().then((res) => {
+      if (res !== "err") setPost(res);
     });
   }, []);
-
  
 
 
@@ -23,13 +22,13 @@ const AboutAdmin = (props) => {
       <div className=" row ">
         <div className="col-12 col-lg-12 m-auto">
           <h3 className="p-4 col-12  col-lg-12 whitet text-center text-uppercase ">
-            Admin for About
+            Admin for Footer
           </h3>
           <div className="col-7 text-center m-auto">
         <p className="whitet">Det du ret i:</p>
-        <p className="text-uppercase whitet text-break">{post.content1}</p>
-        <p className="text-uppercase whitet text-break">{post.content2}</p>
-        <Link to={"/admin/AboutRetAbout/" + post._id} className="btn btn-success">Ret About</Link>
+        <p className="text-uppercase whitet text-break">{post.about}</p>
+        <p className="text-uppercase whitet text-break">{post.location}</p>
+        <Link to={"/admin/AdminFooterRet/" + post._id} className="btn btn-success">Ret Footer</Link>
 </div>
           
         </div>
@@ -37,4 +36,4 @@ const AboutAdmin = (props) => {
     </section>
   );
 };
-export default AboutAdmin;
+export default FooterAdmin;

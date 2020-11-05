@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Egencontactus from "./Egencontactus";
 
 const Egencomputer = () => {
@@ -46,7 +46,7 @@ const Egencomputer = () => {
   //     ));
 
   return (
-    <div className="container">
+    <div className="container my-5">
       <div className="row "> 
         <div className="col-12 col-lg-12  my-5">
         <h4 className="text-center text-uppercase whitet">Design your own rig</h4>

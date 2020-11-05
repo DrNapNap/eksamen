@@ -1,27 +1,27 @@
 import React, { useState, useEffect } from "react";
 
-import { retabout, hentabout } from "../../helpers/APIkald/apikald";
+import { retFooter, hentfooter } from "../../helpers/APIkald/apikald";
 
 import { BarLoader } from "react-spinners";
 
 import { useHistory } from "react-router-dom";
 
-const AdminRetAbout = (props) => {
+const AdminRetFooter = (props) => {
 
   const history = useHistory();
 
-  const [about, setAbout] = useState();
+  const [footer, setFooter] = useState();
 
   useEffect(() => {
-    hentabout().then((res) => {
-      if (res !== "err") setAbout(res);
+    hentfooter().then((res) => {
+      if (res !== "err") setFooter(res);
     });
   }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    retabout(e.target).then((res) => {
+    retFooter(e.target).then((res) => {
       history.push("/admin");
     });
   };
@@ -29,29 +29,29 @@ const AdminRetAbout = (props) => {
   return (
     <div className="container-fluid ">
       <div className="container whitet col-6 ">
-        <h2 className="text-center text-uppercase py-4">Ret About</h2>
-        {about ? (
+        <h2 className="text-center text-uppercase py-4">Ret Footer</h2>
+        {footer ? (
           <form className="row" onSubmit={handleSubmit}>
             <div className="col-12">
               <label className="col-12">
-                Content1
+              Ret about 
                 <textarea
-                  name="content1"
-                  id="txtBeskrivelse"
-                  placeholder="Content1"
+                  name="about"
+                  id=""
+                  placeholder="about"
                   className="col-12 h-75"
-                  defaultValue={about.content1}
+                  defaultValue={footer.about}
                 ></textarea>
               </label>
 
               <label className="col-12">
-                Content2
+                Ret location
                 <textarea
-                  name="content2"
-                  id="txtBeskrivelse"
-                  placeholder="Content2"
+                  name="location"
+                  id=""
+                  placeholder="location"
                   className="col-12"
-                  defaultValue={about.content1}
+                  defaultValue={footer.location}
                 ></textarea>
               </label>
 
@@ -68,7 +68,7 @@ const AdminRetAbout = (props) => {
           </button>
 
                 <button type="submit" className="col-2 m-4  btn btn-danger">
-                  Ret About
+                  Ret footer
                 </button>
               </div>
             </div>
@@ -86,4 +86,4 @@ const AdminRetAbout = (props) => {
   );
 };
 
-export default AdminRetAbout;
+export default AdminRetFooter;

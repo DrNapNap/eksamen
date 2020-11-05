@@ -11,7 +11,7 @@
     "axios": "^0.20.0",
     "bootstrap": "^4.5.3",
     "dayjs": "^1.9.3",
-    "html-react-parser": "^0.14.0",
+    "html-react-parser": "^0.14.1",
     "jquery": "^3.5.1",
     "node-sass": "^5.0.0",
     "nodemon": "^2.0.6",

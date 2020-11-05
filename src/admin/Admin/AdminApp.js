@@ -5,11 +5,16 @@ import AdminHome from "./AdminHome";
 import AboutAdmin from "./alletiladmin/AboutAdmin";
 import AdminRetAbout from "./ret/AdminRetAbout";
 import AdminRet from "./ret/AdminRetProduct";
+import FooterAdmin from "./alletiladmin/FooterAdmin";
+import AdminRetFooter from "./ret/AdminRetFooter"
+import AdminContact from "./alletiladmin/AdminContact"
+import AdminDeleteContact from "./delete/AdminDeleteContact";
+
 
 
 const AdminProduct = lazy(() => import("./alletiladmin/AdminProduct"));
 const Oret = lazy(() => import("./opRet/OpretProduct"));
-const Admindelete = lazy(() => import("./delete/AdmindeleteProduct"));
+const AdmindeleteProduct = lazy(() => import("./delete/AdmindeleteProduct"));
 
 const Slider = lazy(() => import("./alletiladmin/Slider"));
 const AdminRetSlider = lazy(() => import("./delete/AdmindeleteSlider"));
@@ -22,9 +27,9 @@ const AdminApp = () => {
   const [loggetind] = useGlobal("loggetind");
  
 
-  // if (!loggetind) {
-  //   return <Redirect to={{ pathname: "/login" }} />;
-  // }
+   if (!loggetind) {
+    return <Redirect to={{ pathname: "/login" }} />;
+   }
 
   return (
     <>
@@ -38,8 +43,14 @@ const AdminApp = () => {
 
           <Route path="/admin/AdminRet/:ec" component={AdminRet} />
           <Route path="/admin/AboutRetAbout/:ec" component={AdminRetAbout} />
-          <Route path="/admin/Admindelete/:ec" component={Admindelete} />
+          <Route path="/admin/Admindelete/:ec" component={AdmindeleteProduct} />
+          <Route path="/admin/AdminFooter/" component={FooterAdmin} />
+          <Route path="/admin/AdminFooterRet/:ec" component={AdminRetFooter} />
+          <Route path="/admin/AdminContact/" component={AdminContact} />
+          <Route path="/admin/AdminDeleteContact/:ec" component={AdminDeleteContact} />
 
+
+          
        
           <Route path="/admin/AdminRetForSlider/" component={OpretSlider} />
           <Route path="/admin/AdmindeleteForSlider/:ec" component={AdminRetSlider} />

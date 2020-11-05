@@ -6,10 +6,7 @@ import {
   hentUdvalgtProduct,
 } from "../../helpers/APIkald/apikald";
 
-
-import { BarLoader } from 'react-spinners'
-
-
+import { BarLoader } from "react-spinners";
 
 import ImageUploader from "react-images-upload";
 
@@ -17,8 +14,6 @@ import { useHistory } from "react-router-dom";
 
 const AdminRet = (props) => {
   const ID = props.match.params.ec;
-
-
 
   const [category, setCategory] = useState();
   const history = useHistory();
@@ -52,63 +47,91 @@ const AdminRet = (props) => {
     ));
   }
 
-
   return (
     <div className="container-fluid g">
-    <div className="container whitet ">
-      {product ? (
-        <form className="row"  onSubmit={handleSubmit}>
-          <div className="col-12">
-          <label className="col-12">
-            Titel
-            <input className="col-12"
-              name="title"
-              id="inpTitel"
-              type="text"
-              placeholder="Title"
-              defaultValue={product.title}
-            />
-          </label>
+      <div className="container whitet ">
+        {product ? (
+          <form className="row" onSubmit={handleSubmit}>
+            <div className="col-12">
+              <label className="col-12">
+                Titel
+                <input
+                  className="col-12"
+                  name="title"
+                  id="inpTitel"
+                  type="text"
+                  placeholder="Title"
+                  defaultValue={product.title}
+                />
+              </label>
 
-          <label className="col-12">
-          Content
-            <textarea
-              name="content"
-              id="txtBeskrivelse"
-              placeholder="content"
-              className="col-12"
-              defaultValue={product.content}
-            ></textarea>
-          </label>
-<div className="col-12">
-         <select className="col-4" defaultValue={product._id} name="category">{liste}</select> 
+              <label className="col-12">
+                Content
+                <textarea
+                  name="content"
+                  id="txtBeskrivelse"
+                  placeholder="content"
+                  className="col-12"
+                  defaultValue={product.content}
+                ></textarea>
+              </label>
+              <div className="col-12">
+                <select
+                  className="col-4"
+                  defaultValue={product._id}
+                  name="category"
+                >
+                  {liste}
+                </select>
+              </div>
+              <div>
+                <ImageUploader
+                  name="billede"
+                  withIcon={true}
+                  buttonText="Vælg et billede"
+                  withLabel={true}
+                  imgExtension={[".jpg", ".gif", ".png", ".jpeg"]}
+                  singleImage={true}
+                  withPreview={true}
+                  required={true}
+                />
+              </div>
+              <div className="col-6 m-auto">
+                <img
+                  className="img-fluid col-12 "
+                  src={
+                    "http://localhost:5039/images/product/" +
+                    product.productimage
+                  }
+                  alt=""
+                />
+              </div>
+              <br />
 
-</div>
-          <div>
-            <ImageUploader
-              name="billede"
-              withIcon={true}
-              buttonText="Vælg et billede"
-              withLabel={true}
-              imgExtension={[".jpg", ".gif", ".png", ".jpeg"]}
-              singleImage={true}
-              withPreview={true}
-              required={true}
-
-            />
-          </div>
-<div className="col-6 m-auto">
-          <img className="img-fluid col-12 " src={"http://localhost:5039/images/product/" + product.productimage} alt="" />
-</div>
-          <br />
-
-          <button type="button" className="col-1 m-3  btn btn-success">Fortryd</button>
-          <button type="submit" className="col-2 m-3 btn btn-danger"  >Ret Product</button></div>
-        </form>
-      ) : (
-          <BarLoader className=" text-center" width="440" color='orange' loading />
+              <button
+                type="button"
+                onClick={() => {
+                  history.push("/admin");
+                }}
+                className="col-1 m-3  btn btn-success"
+              >
+                Fortryd
+              </button>
+              <button type="submit" className="col-2 m-3 btn btn-danger">
+                Ret Product
+              </button>
+            </div>
+          </form>
+        ) : (
+          <BarLoader
+            className=" text-center"
+            width="440"
+            color="orange"
+            loading
+          />
         )}
-    </div></div>
+      </div>
+    </div>
   );
 };
 

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-has-content */
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { hentAlleproduct } from "../../admin/helpers/APIkald/apikald";
@@ -35,7 +36,7 @@ const Produkter = () => {
 
   return (
     <section className="container">
-      <a className="anchor" id="products"></a>
+      <a className="anchor" href={() => false}  id="products"/>
       <div className="row">
         <div className="col-12">
           <h2 className="whitet text-center col-12 my-4">PRODUCTS</h2>

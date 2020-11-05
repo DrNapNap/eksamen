@@ -24,6 +24,7 @@ const Login = () => {
       if (res1 !== "error") {
         setglobal(true);
         h.push("/admin");
+        
       } else {
         console.log(res1);
         setBesked("(LOGIN) gik galt");
@@ -46,11 +47,13 @@ const Login = () => {
         <form className=" col-12 m-auto" onSubmit={handleLogin}>
           <br />
           <div className="text-center">
+            
             <input className="col-3 "
-              type="text"
-              name="brugernavn"
-              required
-              placeholder="brugernavn"
+              type="email"
+              name="email"
+              
+              placeholder="Email"
+              
             /></div>
           <div className="text-center">
             <input className="col-3 mt-3" type="password" name="password" required autoComplete="true" placeholder="password" />

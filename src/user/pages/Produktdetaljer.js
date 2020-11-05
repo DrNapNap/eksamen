@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+
 const Produktdetaljer = () => {
   const [post, setPost] = useState({});
   const { idd } = useParams();
@@ -11,6 +12,7 @@ const Produktdetaljer = () => {
       .get("http://localhost:5039/product/" + idd)
       .then((res) => {
         setPost(res.data);
+        
       })
       .catch((err) => {
         console.log(err);
@@ -20,6 +22,8 @@ const Produktdetaljer = () => {
   return (
     <section className="container justify-content-center  text-center whitet py-5 my-3">
       <div className="row">
+        {post != null ?
+        <>
         <div className="col-12">
           <h2 className="py-4">{post.title}</h2>
 
@@ -35,8 +39,10 @@ const Produktdetaljer = () => {
             <p className="col-12 col-lg-8 py-4">Pris 300KR</p>
             <button className=" col-12 col-lg-2 m-auto  btn btn-dark">Køb NU</button>
           </div>
-        </div>
+        </div>     </>
+      : "loading..."}
       </div>
+
     </section>
   );
 };

@@ -29,7 +29,6 @@ function AdminRetSlider() {
     });
   }, [ec]);
 
-  console.log(ec);
 
   
 
@@ -46,7 +45,7 @@ function AdminRetSlider() {
             <img
               className="img-fluid"
               src={"http://localhost:5039/images/slider/" + gd.sliderimage}
-              alt={gd.productimage}
+              alt={gd.sliderimage}
             ></img>
           </div>
 

@@ -63,7 +63,7 @@ export const hentUdvalgt = (id) => {
     return response;
 }
 
-export const soegEvent = (soeg) => {
+export const soeg = (soeg) => {
 
     let response = axios.get(api.baseUrl + "event/soeg/" + soeg) 
         .then(response => { return response.data })
@@ -83,7 +83,38 @@ export const hentabout = () => {
 }
 
 
+export const retabout = (ret) => {
 
+    let formdata = new FormData(ret)
+
+    let response = axios.put(api.baseUrl + "about/admin" , formdata, { withCredentials: true })
+        .then(response => { return response.data })
+        .catch(error => { return "error"; })
+    console.log(formdata);
+    return response;
+}
+
+
+export const retFooter = (ret) => {
+
+    let formdata = new FormData(ret)
+
+    let response = axios.put(api.baseUrl + "footer/admin" , formdata, { withCredentials: true })
+        .then(response => { return response.data })
+        .catch(error => { return "error"; })
+    console.log(formdata);
+    return response;
+}
+
+
+export const hentAllecontactadmin = (id) => {
+
+    let response = axios.get(api.baseUrl + "contact/admin/" + id) 
+        .then(response => { return response.data })
+        .catch(error => { return "error" })
+
+    return response;
+}
 
 
 export const hentAllegear = () => {
@@ -156,18 +187,16 @@ export const ret = (retEvent, eventID) => {
 }
 
 //login
-
 export const loginb = (brugerlogin) => {
     let formdata = new FormData(brugerlogin);
-
-    let response = axios.post(api.baseUrl + "login/login", formdata, { withCredentials: true }) 
-        .then(response => { return response.data })
-        .catch(error => {
-            console.log(error);
-            return "error";
-        })
-    return response;
-}
+    
+        let response = axios.post(api.baseUrl + "login/login", formdata, {withCredentials:true}) 
+            .then(response => { return response.data })
+            .catch(error => { 
+                console.log(error);
+                return "error"; })
+        return response;
+    }
 
 
 export const logud = () => {
