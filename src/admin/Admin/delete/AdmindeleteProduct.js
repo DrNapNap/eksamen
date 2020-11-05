@@ -2,12 +2,15 @@ import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 
+import parse from "html-react-parser";
+
+
 import { hentUdvalgtProduct } from "../../helpers/APIkald/apikald";
 
 function AdmindeleteProduct() {
   const { ec } = useParams();
   const history = useHistory();
-  const [gd, setGd] = useState("");
+  const [gd, setGd] = useState();
 
   const handleSletE = (e) => {
     axios
@@ -36,13 +39,17 @@ function AdmindeleteProduct() {
     <div className="col-5 m-auto">
       <div className="card ">
         <div className="card-body">
+
+          {gd != null ?
+          <>
           <h3 className="card-title py-1">
             Er du sikker på at du vil slette denne product:
           </h3>
-           <h4 >{gd.title}</h4> 
-
-           <p>{gd.content}</p> 
-
+           
+          {parse (gd.title)}
+           {parse (gd.content)}
+           </>
+: "Loading..." } 
           <button
             className="btn btn-success mr-3"
             onClick={() => {

@@ -32,6 +32,12 @@ function AdminHome() {
           <Link className="btn-success btn col-3 m-auto" to="/admin/AdminContact/">
           Delete, Contact
           </Link></div>
+          <div className="col-12 m-2 text-uppercase">
+          <Link className="btn-success btn col-3 m-auto" to="/admin/Adminnewsubscrip/">
+          Delete, newssubscription
+          </Link></div>
+
+          
         </div>
       </div>
     </section>

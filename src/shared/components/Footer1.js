@@ -24,10 +24,10 @@ const Footer1 = () => {
           <h3 className="text-center text-uppercase ">Around the web</h3>
  <div className="row justify-content-center p-1">
 
-          <i class="fab fa-facebook whe m-2"></i>
-          <i class="fab fa-twitter whe m-2"></i>
-          <i class="fab fa-invision whe m-2"></i>
-          <i class="fas fa-basketball-ball whe m-2"></i>
+          <i className="fab fa-facebook whe m-2"></i>
+          <i className="fab fa-twitter whe m-2"></i>
+          <i className="fab fa-invision whe m-2"></i>
+          <i className="fas fa-basketball-ball whe m-2"></i>
           </div>
           </div>
           <div className="col-12 col-lg-5 text-center my-5">

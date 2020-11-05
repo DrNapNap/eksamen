@@ -2,16 +2,16 @@ import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 
-import { hentAllecontactadmin } from "../../helpers/APIkald/apikald";
+import {  hentAlleNewssubscription } from "../../helpers/APIkald/apikald";
 
-function AdminDeleteContact() {
+function AdminDeleteNewssub() {
   const { ec } = useParams();
   const history = useHistory();
   const [gd, setGd] = useState("");
 
   const handleSletE = (e) => {
     axios
-      .delete("http://localhost:5039/contact/admin/" + ec, {
+      .delete("http://localhost:5039/newssubscription/admin/" + ec, {
         withCredentials: true,
       })
       .then((res) => {
@@ -24,7 +24,7 @@ function AdminDeleteContact() {
   };
 
   useEffect(() => {
-    hentAllecontactadmin(ec).then((res) => {
+    hentAlleNewssubscription(ec).then((res) => {
       if (res !== "err") setGd(res);
     });
   }, [ec]);
@@ -34,13 +34,11 @@ function AdminDeleteContact() {
       <div className="card ">
         <div className="card-body">
           <h3 className="card-title">
-            Er du sikker på at du vil slette denne Contact:
+            Er du sikker på at du vil slette denne newssubscription:
           </h3>
           <h6>Text du slet : {gd.name}</h6>
           <h6>Text du slet : {gd.email}</h6>
-          <h6>Text du slet : {gd.phonenumber}</h6>
-          <h6>Text du slet : {gd.message}</h6>
-          <h6>Text du slet : {gd.received}</h6>
+
           <button
             className="btn btn-success mr-3"
             onClick={() => {
@@ -57,4 +55,4 @@ function AdminDeleteContact() {
     </div>
   );
 }
-export default AdminDeleteContact;
+export default AdminDeleteNewssub;

@@ -9,6 +9,8 @@ import FooterAdmin from "./alletiladmin/FooterAdmin";
 import AdminRetFooter from "./ret/AdminRetFooter"
 import AdminContact from "./alletiladmin/AdminContact"
 import AdminDeleteContact from "./delete/AdminDeleteContact";
+import Adminnewsubscrip from "./alletiladmin/Adminnewsubscrip";
+import AdminDeleteNewssub from "./delete/AdminDeleteNewssub";
 
 
 
@@ -49,6 +51,8 @@ const AdminApp = () => {
           <Route path="/admin/AdminContact/" component={AdminContact} />
           <Route path="/admin/AdminDeleteContact/:ec" component={AdminDeleteContact} />
 
+          <Route path="/admin/Adminnewsubscrip/" component={Adminnewsubscrip} />
+          <Route path="/admin/Adminnewsubscripd/:ec" component={AdminDeleteNewssub} />
 
           
        

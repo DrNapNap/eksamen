@@ -109,7 +109,17 @@ export const retFooter = (ret) => {
 
 export const hentAllecontactadmin = (id) => {
 
-    let response = axios.get(api.baseUrl + "contact/admin/" + id) 
+    let response = axios.get(api.baseUrl + "contact/admin/" + id , { withCredentials: true }) 
+        .then(response => { return response.data })
+        .catch(error => { return "error" })
+
+    return response;
+}
+
+
+export const hentAlleNewssubscription = (id) => {
+
+    let response = axios.get(api.baseUrl + "newssubscription/admin/" + id , { withCredentials: true }) 
         .then(response => { return response.data })
         .catch(error => { return "error" })
 
@@ -144,6 +154,17 @@ export const sendKontaktbesked = (besked) => {
     let formdata = new FormData(besked);
 
     let response = axios.post(api.baseUrl + "contact", formdata) 
+        .then(response => { return response.data })
+        .catch(error => { return "error" })
+
+    return response;
+}
+
+export const sendNewsSubscription = (besked) => {
+
+    let formdata = new FormData(besked);
+
+    let response = axios.post(api.baseUrl + "newssubscription", formdata) 
         .then(response => { return response.data })
         .catch(error => { return "error" })
 

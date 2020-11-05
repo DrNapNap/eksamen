@@ -26,13 +26,17 @@ const About = () => {
             </p>
 
             <div className="row justify-content-center whitet py-5">            
-
+            {post != null ?
+            <>
               <section className="col-12 col-lg-3 ">
                 <p className="text-break">{post.content2}</p>
               </section>
               <section className="col-12 col-lg-4">
                 <p className="text-break">{post.content1}</p>
               </section>
+              </>
+              
+           :"Loading..." }
             </div>
           </div>
         </div>
