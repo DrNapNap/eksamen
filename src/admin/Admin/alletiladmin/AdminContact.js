@@ -6,10 +6,10 @@ import axios from "axios";
 import parse from "html-react-parser";
 
 const AdminContact = (props) => {
-  const [post, setPost] = useState();
+  const [post, setPost] = useState("");
 
   useEffect(() => {
-    axios.get("http://localhost:5039/contact/admin").then((res) => {
+    axios.get("http://localhost:5039/contact/admin"    , { withCredentials: true }).then((res) => {
       const p1 = res.data.slice(0, 80);
 
       setPost(p1);
