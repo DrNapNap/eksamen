@@ -53,7 +53,7 @@ const Adminnewsubscrip = (props) => {
       <div className=" row">
         <div className="col-12 col-lg-12">
           <h3 className="p-4 col-12 text-uppercase text-center col-lg-12 whitet">
-            Admin for Contact
+            Admin for subscip
           </h3>
 
 

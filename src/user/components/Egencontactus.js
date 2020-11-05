@@ -16,7 +16,7 @@ const Egencomputer = () => {
         
         <div className="col-12 col-lg-6 my-1">
     <input type="text" className="form-control col-12 g" placeholder="First name" /></div>
-    <div className="col-6 my-1 col-12">
+    <div className="col-6 my-1 col-lg-6">
     <input type="text" className="form-control col-12 g" placeholder="Last name"  /></div>
     <div className="col-12">
       <input type="email" className="form-control col-12 g pl-3 "  placeholder="email" /> 

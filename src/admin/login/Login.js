@@ -10,6 +10,8 @@ const Login = () => {
   const [besked, setBesked] = useState();
 
   const [global, setglobal] = useGlobal("loggetind");
+  const [usid, setusid] = useGlobal("users_id");
+  
 
   const h = useHistory();
 
@@ -19,6 +21,7 @@ const Login = () => {
     loginb(e.target).then((res1) => {
       if (res1 !== "error") {
         setglobal(true);
+       setusid(res1)
         h.push("/admin");
       } else {
         console.log(res1);
@@ -26,6 +29,7 @@ const Login = () => {
       }
     });
   };
+
 
   return (
     <div className="container-fluid">
@@ -38,7 +42,7 @@ const Login = () => {
           <br />
           <div className="text-center">
             <input
-              className="col-3 "
+              className="col-12 col-lg-3 col-md-10 "
               type="email"
               name="email"
               placeholder="Email"
@@ -46,7 +50,7 @@ const Login = () => {
           </div>
           <div className="text-center">
             <input
-              className="col-3 mt-3"
+              className="col-12 col-lg-3 col-md-10 mt-3"
               type="password"
               name="password"
               required

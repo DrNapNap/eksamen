@@ -36,7 +36,7 @@ const Slider = (props) => {
           <div className=" col-12 col-lg-5">
             <img
               className="img-fluid"
-              src={"http://localhost:5039/images/slider/" + p.sliderimage}
+              src={"http://188.40.121.90:5039/images/slider/" + p.sliderimage}
               alt={p.productimage}
             ></img>
           </div>

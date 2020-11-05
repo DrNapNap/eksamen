@@ -42,7 +42,7 @@ const Produkter = () => {
           <h2 className="whitet text-center col-12 my-4">PRODUCTS</h2>
 
           <p className="whitet text-center   ">
-            _____________ <i class="fas fa-star"></i> _____________
+            _____________ <i className="fas fa-star"></i> _____________
           </p>
           <div className="row col-12">{liste}</div>
         </div>

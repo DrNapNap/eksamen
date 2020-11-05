@@ -9,6 +9,7 @@ const Footer2 = lazy(() => import("./shared/components/Footer2"));
 const NotFound = lazy(() => import("./admin/NotFound"));
 const Hedder = lazy(() => import("./user/pages/Hedder"));
 const Footer1 = lazy(() => import("./shared/components/Footer1"));
+const Soege = lazy(() => import("./shared/components/nav/Soege"));
 
 function App() {
   const renderLoader = () => <p>Loading</p>;
@@ -22,6 +23,8 @@ function App() {
           <Switch>
             <Route exact path="/" component={Pages} />
             <Route path="/Produktdetaljer/:idd" component={Produktdetaljer} />
+            <Route exact path="/soeg/:soegeordet" component={Soege} />
+
             <Route component={NotFound} />
           </Switch>
         </BrowserRouter>

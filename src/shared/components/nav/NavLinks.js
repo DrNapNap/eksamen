@@ -1,6 +1,6 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
-import Navapi from "./Navapi";
 import img from "../img/logo.png"
 
 
@@ -10,7 +10,14 @@ import "./NavLinks.css";
 
 const NavLinks = (props) => {
 
+  let history = useHistory();
 
+  const handleSoeg = (e) => {
+
+      e.preventDefault(); // undgå at component reloader/re-mounter
+      history.push("/soeg/" + e.target.soeg.value)
+
+  }
   return (
     <nav className="  navbar-expand-lg  navbar-light container-fluid  white sticky-top ">
 <div className="container ">
@@ -41,11 +48,10 @@ const NavLinks = (props) => {
             CONTACT
           </a>
         </div>
-<form className="">
-<input placeholder="Søg har"  type="search"/>
-<button type="submit">Søg</button>
-</form>
-        <Navapi className="" />
+        <form onSubmit={handleSoeg}>
+                            <input name="soeg" type="search" />
+                            <input type="submit" value="Søg" />
+                        </form>
       </div>
       </div>
     </nav>

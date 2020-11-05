@@ -29,7 +29,7 @@ if (post && post.length) {
         <div className="black col-6 m-auto ">
         <h2 className="text-center text-uppercase whitet py-3">BOSTON GAMING</h2>
 <p className="whitet text-center   ">
-       _____________  <i class="fas fa-star"></i>  _____________
+       _____________  <i className="fas fa-star"></i>  _____________
      </p>
         
         <p className="py-5">{r.alttext}</p>

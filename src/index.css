@@ -8248,7 +8248,7 @@ pre {
 
 body {
   background-color: black;
-  font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
+  font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important; }
 
 .footer {
   font-size: 10px; }
@@ -8268,6 +8268,9 @@ body {
 
 .img {
   border-radius: 5px; }
+
+.border-white {
+  border: #ffffff 1px solid; }
 
 .total {
   border-radius: 10px; }
@@ -8356,3 +8359,6 @@ a.anchor {
   position: relative;
   top: -100px;
   visibility: hidden; }
+
+.a:hover {
+  color: #414141; }

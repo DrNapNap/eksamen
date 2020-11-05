@@ -22,7 +22,7 @@ const About = () => {
             <h2 className="text-center text-uppercase whitet py-3">About</h2>
 
        <p className="whitet text-center   ">
-              _____________  <i class="fas fa-star"></i>  _____________
+              _____________  <i className="fas fa-star"></i>  _____________
             </p>
 
             <div className="row justify-content-center whitet py-5">            

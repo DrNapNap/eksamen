@@ -6,6 +6,52 @@ const api = {
 }
 
 
+
+export const hentAllegear = () => {
+
+    let response = axios.get(api.baseUrl + "gear")
+        .then(response => { return response.data })
+        .catch(error => { return "error" })
+
+    return response;
+}
+
+
+export const hentfooter = () => {
+
+    let response = axios.get(api.baseUrl + "footer")
+        .then(response => { return response.data })
+        .catch(error => { return "error" })
+
+    return response;
+}
+
+
+
+
+export const sendKontaktbesked = (besked) => {
+
+    let formdata = new FormData(besked);
+
+    let response = axios.post(api.baseUrl + "contact", formdata) 
+        .then(response => { return response.data })
+        .catch(error => { return "error" })
+
+    return response;
+}
+
+export const sendNewsSubscription = (besked) => {
+
+    let formdata = new FormData(besked);
+
+    let response = axios.post(api.baseUrl + "newssubscription", formdata) 
+        .then(response => { return response.data })
+        .catch(error => { return "error" })
+
+    return response;
+}
+
+
 export const hentAlleslider = () => {
 
     let response = axios.get(api.baseUrl + "slider")
@@ -54,6 +100,8 @@ export const hentUdvalgtProduct = (id) => {
 }
 
 
+
+
 export const hentUdvalgt = (id) => {
 
     let response = axios.get(api.baseUrl + "product/category/" + id) 
@@ -65,7 +113,7 @@ export const hentUdvalgt = (id) => {
 
 export const soeg = (soeg) => {
 
-    let response = axios.get(api.baseUrl + "event/soeg/" + soeg) 
+    let response = axios.get(api.baseUrl + "product/search/" + soeg) 
         .then(response => { return response.data })
         .catch(error => { return "error" })
 
@@ -82,6 +130,31 @@ export const hentabout = () => {
     return response;
 }
 
+//login
+export const loginb = (brugerlogin) => {
+    let formdata = new FormData(brugerlogin);
+    
+        let response = axios.post(api.baseUrl + "login/login", formdata, {withCredentials:true}) 
+            .then(response => { return response.data })
+            .catch(error => { 
+                console.log(error);
+                return "error"; })
+        return response;
+    }
+
+
+export const logud = () => {
+
+
+    let response = axios.get(api.baseUrl + "login/logout", { withCredentials: true }) 
+        .then(response => { return response.data })
+        .catch(error => { return "error"; })
+    return response;
+}
+
+
+// Admin ⬇️
+
 
 export const retabout = (ret) => {
 
@@ -91,6 +164,37 @@ export const retabout = (ret) => {
         .then(response => { return response.data })
         .catch(error => { return "error"; })
     console.log(formdata);
+    return response;
+}
+
+export const retUser = (ret, id) => {
+
+    let formdata = new FormData(ret)
+
+    let response = axios.put(api.baseUrl + "user/admin/" + id , formdata, { withCredentials: true })
+        .then(response => { return response.data })
+        .catch(error => { return "error"; })
+    console.log(formdata);
+    return response;
+}
+
+
+
+export const hentUduser = (id) => {
+
+    let response = axios.get(api.baseUrl + "user/admin/" + id , { withCredentials: true }) 
+        .then(response => { return response.data })
+        .catch(error => { return "error" })
+
+    return response;
+}
+export const Opretuser = (nye) => {
+    let formdata = new FormData(nye)
+
+    let response = axios.post(api.baseUrl + "user/admin/" , formdata, { withCredentials: true }) 
+        .then(response => { return response.data })
+        .catch(error => { return "error"; })
+
     return response;
 }
 
@@ -120,51 +224,6 @@ export const hentAllecontactadmin = (id) => {
 export const hentAlleNewssubscription = (id) => {
 
     let response = axios.get(api.baseUrl + "newssubscription/admin/" + id , { withCredentials: true }) 
-        .then(response => { return response.data })
-        .catch(error => { return "error" })
-
-    return response;
-}
-
-
-export const hentAllegear = () => {
-
-    let response = axios.get(api.baseUrl + "gear")
-        .then(response => { return response.data })
-        .catch(error => { return "error" })
-
-    return response;
-}
-
-
-export const hentfooter = () => {
-
-    let response = axios.get(api.baseUrl + "footer")
-        .then(response => { return response.data })
-        .catch(error => { return "error" })
-
-    return response;
-}
-
-
-
-
-export const sendKontaktbesked = (besked) => {
-
-    let formdata = new FormData(besked);
-
-    let response = axios.post(api.baseUrl + "contact", formdata) 
-        .then(response => { return response.data })
-        .catch(error => { return "error" })
-
-    return response;
-}
-
-export const sendNewsSubscription = (besked) => {
-
-    let formdata = new FormData(besked);
-
-    let response = axios.post(api.baseUrl + "newssubscription", formdata) 
         .then(response => { return response.data })
         .catch(error => { return "error" })
 
@@ -207,24 +266,3 @@ export const ret = (retEvent, eventID) => {
     return response;
 }
 
-//login
-export const loginb = (brugerlogin) => {
-    let formdata = new FormData(brugerlogin);
-    
-        let response = axios.post(api.baseUrl + "login/login", formdata, {withCredentials:true}) 
-            .then(response => { return response.data })
-            .catch(error => { 
-                console.log(error);
-                return "error"; })
-        return response;
-    }
-
-
-export const logud = () => {
-
-
-    let response = axios.get(api.baseUrl + "login/logout", { withCredentials: true }) 
-        .then(response => { return response.data })
-        .catch(error => { return "error"; })
-    return response;
-}

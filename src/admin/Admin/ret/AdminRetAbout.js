@@ -22,7 +22,7 @@ const AdminRetAbout = (props) => {
     e.preventDefault();
 
     retabout(e.target).then((res) => {
-      history.push("/admin");
+      history.push("/admin/AboutAdmin/");
     });
   };
 
@@ -61,7 +61,7 @@ const AdminRetAbout = (props) => {
                 <button
             className="col-2 m-2  btn btn-success"
             onClick={() => {
-              history.push("/admin");
+              history.push("/admin/AboutAdmin/");
             }}
           >
             Fortryd

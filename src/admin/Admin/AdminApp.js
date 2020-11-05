@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from "react";
-import { Redirect, Route, Switch } from "react-router-dom";
+import { Link, Redirect, Route, Switch } from "react-router-dom";
 import { useGlobal } from "reactn";
 import AdminHome from "./AdminHome";
 import AboutAdmin from "./alletiladmin/AboutAdmin";
@@ -11,6 +11,10 @@ import AdminContact from "./alletiladmin/AdminContact"
 import AdminDeleteContact from "./delete/AdminDeleteContact";
 import Adminnewsubscrip from "./alletiladmin/Adminnewsubscrip";
 import AdminDeleteNewssub from "./delete/AdminDeleteNewssub";
+import User from "../users/User";
+import AdminRetSwitchP from "./ret/AdminRetSwitchP";
+import AdminDeleteUser from "./delete/AdminDeleteUser";
+import OpretCreatenewuser from "./opRet/OpretCreatenewuser";
 
 
 
@@ -27,14 +31,31 @@ const AdminApp = () => {
   const renderLoader = () => <p>Loading</p>;
 
   const [loggetind] = useGlobal("loggetind");
- 
+    const [users_id] = useGlobal("users_id");
+
+  
 
    if (!loggetind) {
     return <Redirect to={{ pathname: "/login" }} />;
    }
 
+
+   
+
   return (
     <>
+    <div className="container-fluid">
+
+      
+<div className="row">
+      <Link
+        className="col-12 col-lg-3 whitet a "
+        to={"/admin/user/"}
+      >
+        Din bruger {users_id.name}
+      </Link>
+      </div> 
+    </div> 
       <Suspense fallback={renderLoader()}>
         <Switch>
           <Route exact path="/admin/" component={AdminHome} />
@@ -53,6 +74,12 @@ const AdminApp = () => {
 
           <Route path="/admin/Adminnewsubscrip/" component={Adminnewsubscrip} />
           <Route path="/admin/Adminnewsubscripd/:ec" component={AdminDeleteNewssub} />
+
+<Route path="/admin/user/" component={User}></Route>
+
+<Route path="/admin/userRet/:ec" component={AdminRetSwitchP}></Route>
+<Route path="/admin/userDelete/:ec" component={AdminDeleteUser}></Route>
+<Route path="/admin/userGreaten/:ec" component={OpretCreatenewuser}></Route>
 
           
        

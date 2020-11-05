@@ -52,7 +52,7 @@ const Egencomputer = () => {
         <h4 className="text-center text-uppercase whitet">Design your own rig</h4>
                     
         <p className="whitet text-center   ">
-              _____________  <i class="fas fa-star"></i>  _____________
+              _____________  <i className="fas fa-star"></i>  _____________
             </p>
 </div>
         <div className="col-12 col-lg-6">
