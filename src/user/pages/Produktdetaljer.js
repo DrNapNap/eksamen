@@ -21,7 +21,7 @@ const Produktdetaljer = () => {
 
   return (
     <section className="container justify-content-center  text-center whitet py-5 my-3">
-      <div className="row">
+      <div className="row d">
         {post != null ?
         <>
         <div className="col-12">
@@ -29,7 +29,7 @@ const Produktdetaljer = () => {
 
           <div className="row">
             <img
-              className="col-10 col-lg-5 img-fluid"
+              className="col-12 col-lg-5 img-fluid"
               src={"http://localhost:5039/images/product/" + post.productimage}
               alt={post.title}
             />

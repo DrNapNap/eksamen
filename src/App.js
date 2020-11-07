@@ -1,5 +1,6 @@
-import React, { lazy, Suspense } from "react";
+import React, { Suspense } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import {lazy} from "@loadable/component"
 
 const Produktdetaljer = lazy(() => import("./user/pages/Produktdetaljer"));
 

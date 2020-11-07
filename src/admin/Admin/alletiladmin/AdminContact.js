@@ -7,6 +7,8 @@ import parse from "html-react-parser";
 
 const AdminContact = (props) => {
   const [post, setPost] = useState("");
+  // const [  settrue] = useState(false);
+  
 
   useEffect(() => {
     axios.get("http://localhost:5039/contact/admin"    , { withCredentials: true }).then((res) => {
@@ -15,6 +17,11 @@ const AdminContact = (props) => {
       setPost(p1);
     });
   }, []);
+
+  
+
+
+  
 
   let postliste = "";
 
@@ -40,6 +47,7 @@ const AdminContact = (props) => {
           <div className="col-12 col-lg-12  my-3 ">
             
             <p className="col-12 my-3 p-0">Message:   {p.message}</p>
+        {/* <button className="col-12 my-3 p-0" onClick={() =>settrue(true)} >Message:   {p.message}</button> */}
           </div>
           <br />
           <div className="col-12">
@@ -61,12 +69,11 @@ const AdminContact = (props) => {
   }
   return (
     <section className="container ">
-      <div className=" row">
+      <div className=" row d">
         <div className="col-12 col-lg-12">
           <h3 className="p-4 col-12 text-uppercase text-center col-lg-12 whitet">
             Admin for Contact
           </h3>
-
 
           {postliste}
         </div>

@@ -31,8 +31,8 @@ const AdminRetSwitchP = (props) => {
   };
 
   return (
-    <div className="container-fluid g">
-      <div className="container whitet ">
+    <div className="container-fluid">
+      <div className="container whitet d ">
         {user ? (
           <form className="row" onSubmit={handleSubmit}>
             <div className="col-12">
@@ -42,7 +42,7 @@ const AdminRetSwitchP = (props) => {
                   className="col-12"
                   name="name"
                   type="text"
-                  placeholder="Title"
+                  placeholder="Name"
                   defaultValue={user.name}
                 />
               </label>
@@ -74,11 +74,11 @@ const AdminRetSwitchP = (props) => {
                 onClick={() => {
                   history.push("/admin");
                 }}
-                className="col-1 m-3  btn btn-success"
+                className="col-6 col-lg-1 m-3  btn btn-success"
               >
                 Fortryd
               </button>
-              <button type="submit" className="col-2 m-3 btn btn-danger">
+              <button type="submit" className="col-6 col-lg-2 m-3 btn btn-danger">
                 Ret user
               </button>
             </div>

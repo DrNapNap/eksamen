@@ -19,12 +19,12 @@ const FooterAdmin = (props) => {
 
   return (
     <section className="container ">
-      <div className=" row ">
+      <div className=" row d">
         <div className="col-12 col-lg-12 m-auto">
           <h3 className="p-4 col-12  col-lg-12 whitet text-center text-uppercase ">
             Admin for Footer
           </h3>
-          <div className="col-7 text-center m-auto">
+          <div className="col-12 col-lg-7 text-center m-auto">
         <p className="whitet">Det du ret i:</p>
         <p className="text-uppercase whitet text-break">{post.about}</p>
         <p className="text-uppercase whitet text-break">{post.location}</p>

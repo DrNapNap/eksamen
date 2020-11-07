@@ -69,8 +69,8 @@ const AdminProduct = (props) => {
     return <h1 className="whitet">ingenpost</h1>;
   }
   return (
-    <section className="container ">
-      <div className=" row">
+    <section className="container  ">
+      <div className=" row containerd ">
         <div className="col-12 col-lg-12">
           <h3 className="p-4 col-12 text-uppercase text-center col-lg-12 whitet">
             Admin for Product

@@ -7,7 +7,7 @@ const Contactus = () => {
 
   return (
     <>
-    <a className="anchor" href={ false}  id="contact"/>
+    <a className="anchor" href="false"  id="contact"/>
 <Kontakt/>
     </>
   );

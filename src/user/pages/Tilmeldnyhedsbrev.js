@@ -25,7 +25,7 @@ const Tilmeldnyhedsbrev = () => {
         _____________ <i className="fas fa-star"></i> _____________
       </p>
 
-      <div className="row  m-4">
+      <div className="row  m-4 d">
         <div className="col-12 col-lg-8 m-auto">
           <form className="col-12 whitet" onSubmit={handleBesked}>
              <p className="col-12 text-center">{state}</p> 

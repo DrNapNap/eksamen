@@ -15,7 +15,7 @@ function AdminHome() {
 
 
       
-      <div className="row">
+      <div className="row d">
         <div className="col-12">
           <h1 className="whitet text-center text-uppercase py-5">
             Admin panel

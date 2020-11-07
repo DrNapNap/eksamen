@@ -3,6 +3,7 @@ import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 
 import { hentAllecontactadmin } from "../../helpers/APIkald/apikald";
+import dayjs from "dayjs";
 
 function AdminDeleteContact() {
   const { ec } = useParams();
@@ -30,7 +31,7 @@ function AdminDeleteContact() {
   }, [ec]);
 
   return (
-    <div className="col-5 m-auto">
+    <div className="col-12 col-lg-5 m-auto">
       <div className="card ">
         <div className="card-body">
           <h3 className="card-title">
@@ -40,7 +41,8 @@ function AdminDeleteContact() {
           <h6>Text du slet : {gd.email}</h6>
           <h6>Text du slet : {gd.phonenumber}</h6>
           <h6>Text du slet : {gd.message}</h6>
-          <h6>Text du slet : {gd.received}</h6>
+  <h6>Received: {dayjs(gd.received).format("YYYY-MM-DDT HH:mm")
+}</h6>        
           <button
             className="btn btn-success mr-3"
             onClick={() => {

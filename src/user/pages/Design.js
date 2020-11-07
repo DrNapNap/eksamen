@@ -7,7 +7,7 @@ const Design = () => {
 
 return(
     <>
-    <a className="anchor" href={() => false}  id="design"/>
+    <a className="anchor" href="false"  id="design"/>
         <Egencomputer/>
         
     </>

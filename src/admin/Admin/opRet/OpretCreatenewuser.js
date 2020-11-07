@@ -25,7 +25,7 @@ const OpretCreatenewuser = () => {
 
   return (
     <div className="container whitet">
-      <div className="row ">
+      <div className="row d">
         <form className="col-10" onSubmit={handleSubmit}>
         <label className="col-12">
         Name

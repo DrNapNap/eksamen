@@ -28,7 +28,7 @@ const AdminRetAbout = (props) => {
 
   return (
     <div className="container-fluid ">
-      <div className="container whitet col-6 ">
+      <div className="container whitet col-12 col-lg-6 ">
         <h2 className="text-center text-uppercase py-4">Ret About</h2>
         {about ? (
           <form className="row" onSubmit={handleSubmit}>
@@ -59,7 +59,7 @@ const AdminRetAbout = (props) => {
               <div className="m-auto">
 
                 <button
-            className="col-2 m-2  btn btn-success"
+            className="col-12 col-lg-2 m-2  btn btn-success"
             onClick={() => {
               history.push("/admin/AboutAdmin/");
             }}
@@ -67,7 +67,7 @@ const AdminRetAbout = (props) => {
             Fortryd
           </button>
 
-                <button type="submit" className="col-2 m-4  btn btn-danger">
+                <button type="submit" className="col-12 m-4 m-sm-2 d col-lg-2  btn btn-danger">
                   Ret About
                 </button>
               </div>

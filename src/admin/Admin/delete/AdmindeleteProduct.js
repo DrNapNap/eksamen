@@ -36,7 +36,7 @@ function AdmindeleteProduct() {
   
 
   return (
-    <div className="col-5 m-auto">
+    <div className="col-12 m-auto col-lg-5">
       <div className="card ">
         <div className="card-body">
 
@@ -51,14 +51,14 @@ function AdmindeleteProduct() {
            </>
 : "Loading..." } 
           <button
-            className="btn btn-success mr-3"
+            className="btn btn-success mr-3 col-12 m-2"
             onClick={() => {
               history.push("/admin");
             }}
           >
             Fortryd
           </button>
-          <button className="btn btn-danger" onClick={handleSletE}>
+          <button className="btn btn-danger col-12 m-2" onClick={handleSletE}>
             SLET
           </button>
         </div>

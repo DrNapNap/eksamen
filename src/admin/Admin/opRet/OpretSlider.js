@@ -19,7 +19,7 @@ const OpretSlider = () => {
   return (
     <div className="container whitet">
       <h3 className="py-2 text-center text-uppercase">slider/admin Opret</h3>
-      <div className="row ">
+      <div className="row d ">
         <form className="col-12" onSubmit={handleSubmit}>
           <label className="col-12 ">
             Alttext

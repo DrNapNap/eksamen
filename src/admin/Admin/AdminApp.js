@@ -1,20 +1,23 @@
-import React, { lazy, Suspense } from "react";
+import React from "react";
 import { Link, Redirect, Route, Switch } from "react-router-dom";
 import { useGlobal } from "reactn";
-import AdminHome from "./AdminHome";
-import AboutAdmin from "./alletiladmin/AboutAdmin";
-import AdminRetAbout from "./ret/AdminRetAbout";
-import AdminRet from "./ret/AdminRetProduct";
-import FooterAdmin from "./alletiladmin/FooterAdmin";
-import AdminRetFooter from "./ret/AdminRetFooter"
-import AdminContact from "./alletiladmin/AdminContact"
-import AdminDeleteContact from "./delete/AdminDeleteContact";
-import Adminnewsubscrip from "./alletiladmin/Adminnewsubscrip";
-import AdminDeleteNewssub from "./delete/AdminDeleteNewssub";
-import User from "../users/User";
-import AdminRetSwitchP from "./ret/AdminRetSwitchP";
-import AdminDeleteUser from "./delete/AdminDeleteUser";
-import OpretCreatenewuser from "./opRet/OpretCreatenewuser";
+import {lazy} from "@loadable/component"
+
+
+const AdminHome = lazy(() => import ("./AdminHome"));
+const AboutAdmin = lazy(() => import ("./alletiladmin/AboutAdmin"));
+const AdminRetAbout = lazy(() => import ("./ret/AdminRetAbout"));
+const AdminRet = lazy(() => import ("./ret/AdminRetProduct"));
+const FooterAdmin = lazy(() => import ("./alletiladmin/FooterAdmin"));
+const AdminRetFooter = lazy(() => import ("./ret/AdminRetFooter"));
+const AdminContact = lazy(() => import ("./alletiladmin/AdminContact"));
+const AdminDeleteContact = lazy(() => import ("./delete/AdminDeleteContact"));
+const Adminnewsubscrip = lazy(() => import ("./alletiladmin/Adminnewsubscrip"));
+const AdminDeleteNewssub = lazy(() => import ("./delete/AdminDeleteNewssub"));
+const User = lazy(() => import ("../users/User"));
+const AdminRetSwitchP = lazy(() => import ("./ret/AdminRetSwitchP"));
+const AdminDeleteUser = lazy(() => import ("./delete/AdminDeleteUser"));
+const OpretCreatenewuser = lazy(() => import ("./opRet/OpretCreatenewuser"));
 
 
 
@@ -28,7 +31,7 @@ const OpretSlider = lazy(() => import("./opRet/OpretSlider"));
 
 
 const AdminApp = () => {
-  const renderLoader = () => <p>Loading</p>;
+  
 
   const [loggetind] = useGlobal("loggetind");
     const [users_id] = useGlobal("users_id");
@@ -56,7 +59,7 @@ const AdminApp = () => {
       </Link>
       </div> 
     </div> 
-      <Suspense fallback={renderLoader()}>
+      
         <Switch>
           <Route exact path="/admin/" component={AdminHome} />
           <Route exact path="/admin/Product/" component={AdminProduct} />
@@ -86,7 +89,7 @@ const AdminApp = () => {
           <Route path="/admin/AdminRetForSlider/" component={OpretSlider} />
           <Route path="/admin/AdmindeleteForSlider/:ec" component={AdminRetSlider} />
           
-        </Switch></Suspense>
+        </Switch>
     </>
   );
 };

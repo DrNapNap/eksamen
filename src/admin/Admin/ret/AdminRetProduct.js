@@ -48,10 +48,10 @@ const AdminRet = (props) => {
   }
 
   return (
-    <div className="container-fluid g">
+    <div className="container-fluid ">
       <div className="container whitet ">
         {product ? (
-          <form className="row" onSubmit={handleSubmit}>
+          <form className="row d" onSubmit={handleSubmit}>
             <div className="col-12">
               <label className="col-12">
                 Titel
@@ -77,7 +77,7 @@ const AdminRet = (props) => {
               </label>
               <div className="col-12">
                 <select
-                  className="col-4"
+                  className="col-7 col-lg-4"
                   defaultValue={product._id}
                   name="category"
                 >
@@ -96,7 +96,7 @@ const AdminRet = (props) => {
                   required={true}
                 />
               </div>
-              <div className="col-6 m-auto">
+              <div className="col-12 col-lg-6 m-auto">
                 <img
                   className="img-fluid col-12 "
                   src={
@@ -113,11 +113,11 @@ const AdminRet = (props) => {
                 onClick={() => {
                   history.push("/admin");
                 }}
-                className="col-1 m-3  btn btn-success"
+                className="col-12 col-lg-1 m-3  btn btn-success"
               >
                 Fortryd
               </button>
-              <button type="submit" className="col-2 m-3 btn btn-danger">
+              <button type="submit" className="col-12 col-lg-2 m-3 btn btn-danger">
                 Ret Product
               </button>
             </div>

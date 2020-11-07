@@ -30,7 +30,7 @@ function AdminDeleteUser() {
   }, [ec]);
 
   return (
-    <div className="col-5 m-auto">
+    <div className="col-12 col-lg-5 m-auto">
       <div className="card ">
         <div className="card-body">
           <h3 className="card-title">
@@ -38,8 +38,6 @@ function AdminDeleteUser() {
           </h3>
           <h6>Text du slet : {gd.name}</h6>
           <h6>Text du slet : {gd.email}</h6>
-          <h6>Text du slet : {gd.phonenumber}</h6>
-          <h6>Text du slet : {gd.message}</h6>
 
           <button
             className="btn btn-success mr-3"

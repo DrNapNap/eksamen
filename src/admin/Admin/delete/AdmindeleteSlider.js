@@ -33,7 +33,7 @@ function AdminRetSlider() {
   
 
   return (
-    <div className="col-5 m-auto">
+    <div className="col-12 m-auto col-lg-5">
       <div className="card ">
         <div className="card-body">
           <h3 className="card-title">

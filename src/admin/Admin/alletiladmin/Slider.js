@@ -36,7 +36,7 @@ const Slider = (props) => {
           <div className=" col-12 col-lg-5">
             <img
               className="img-fluid"
-              src={"http://188.40.121.90:5039/images/slider/" + p.sliderimage}
+              src={"http://localhost:5039/images/slider/" + p.sliderimage}
               alt={p.productimage}
             ></img>
           </div>
@@ -60,7 +60,7 @@ const Slider = (props) => {
   }
   return (
     <section className="container ">
-      <div className=" row ">
+      <div className=" row d">
         <div className="col-12 col-lg-12 m-auto">
           <h3 className="p-4 col-12  col-lg-12 whitet text-center text-uppercase ">
             Admin for slider
@@ -69,7 +69,7 @@ const Slider = (props) => {
             to={"/admin/AdminRetForSlider"}
             className="col-12 col-lg-2 btn btn-success m-3 "
           >
-            Opret ny product
+            Opret ny Slider
           </Link>
 
           {postliste}

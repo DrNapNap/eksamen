@@ -49,31 +49,31 @@ const Oret = () => {
 
   return (
     <div className="container whitet">
-      <div className="row ">
-        <form className="col-10" onSubmit={handleSubmit}>
+      <div className="row d">
+        <form className="col-12 col-lg-10" onSubmit={handleSubmit}>
           <textarea
             style={{ display: "none" }}
             name="content"
             id="txtBeskrivelse"
             placeholder="content"
             defaultValue={b}
-            className="col-8"
+            className="col-12"
           ></textarea>
           <div>
             <label className="col-12 m-3">
               Titel
               <input
-                className="col-8 form-control "
+                className="col-12 col-lg-8 form-control "
                 name="title"
                 id="inpTitel"
                 type="text"
                 placeholder="Titel"
               />
             </label>
-            <label className="col-10 m-3 textb">
+            <label className="col-12 col-lg-10 m-3 textb">
               Skive det content
               <CKEditor
-                className="col-9"
+                className="col-12 col-lg-9"
                 config={editorConfiguration}
                 editor={ClassicEditor}
                 data="<p>CKEditor 5!</p>"
@@ -89,9 +89,9 @@ const Oret = () => {
               />
             </label>
           </div>
-          <div className="col-10 m-3">
+          <div className="col-12 m-3 col-lg-10">
             <select
-              className="col-9"
+              className="col-12 col-lg-9"
               name="category"
               defaultValue="DEFAULT"
               id="regionselect"

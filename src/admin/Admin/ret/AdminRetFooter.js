@@ -28,10 +28,10 @@ const AdminRetFooter = (props) => {
 
   return (
     <div className="container-fluid ">
-      <div className="container whitet col-6 ">
+      <div className="container whitet col-12 col-lg-6 ">
         <h2 className="text-center text-uppercase py-4">Ret Footer</h2>
         {footer ? (
-          <form className="row" onSubmit={handleSubmit}>
+          <form className="row d" onSubmit={handleSubmit}>
             <div className="col-12">
               <label className="col-12">
               Ret about 
@@ -59,7 +59,7 @@ const AdminRetFooter = (props) => {
               <div className="m-auto">
 
                 <button
-            className="col-2 m-2  btn btn-success"
+            className="col-12 m-2 col-lg-2  btn btn-success"
             onClick={() => {
               history.push("/admin");
             }}
@@ -67,7 +67,7 @@ const AdminRetFooter = (props) => {
             Fortryd
           </button>
 
-                <button type="submit" className="col-2 m-4  btn btn-danger">
+                <button type="submit" className="col-12 m-2 m-lg-4 col-lg-2  btn btn-danger">
                   Ret footer
                 </button>
               </div>

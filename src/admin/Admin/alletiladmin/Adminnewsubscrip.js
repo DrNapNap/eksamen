@@ -50,7 +50,7 @@ const Adminnewsubscrip = (props) => {
   }
   return (
     <section className="container ">
-      <div className=" row">
+      <div className=" row d">
         <div className="col-12 col-lg-12">
           <h3 className="p-4 col-12 text-uppercase text-center col-lg-12 whitet">
             Admin for subscip

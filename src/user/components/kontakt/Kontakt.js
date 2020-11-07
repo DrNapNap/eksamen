@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { sendKontaktbesked } from "../../../admin/helpers/APIkald/apikald";
 
 
 const Kontakt = () => {
-  const [ setstate] = useState();
 
 
   const handleBesked = (e) => {
@@ -11,11 +10,7 @@ const Kontakt = () => {
 
     sendKontaktbesked(e.target).then((response) => {
       if (response !== "error") {
-        setstate(response)
-            
-         
 
-        console.log(response);
         alert("Din besked er sendt tak" );
         
       }
